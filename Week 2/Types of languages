@@ -1,0 +1,36 @@
+Types of programming languages: Three Types
+- Procedural 
+- Functional
+- Object Oriented
+
+
+Procedural Programming Language
+  - Specifies a series of well structured steps and procedures to compose a program
+  - Contains a systematic order of statements, fucntions and commands to complete a task
+
+Functional Programming Language
+  - writing a program only in pure functions i.e. never modify variables, but only create new ones as an output
+  - used in situations where we have to perform lots of different operations on the same set of data, like ML
+  - first class functions
+
+Object oriented
+  - revolves around objects
+  - code + data = object
+  - developed to make it easier to develop, deploy, reuse and maintain software
+
+
+
+Static vs Dynamic Languages
+Static: 
+  - Perform type checking at compile time
+  - errors will show at compile time
+  - declare datatype before you use it
+  - more control
+  - Example: int a = 10 ; // values defines at compile time only
+
+Dynamic: 
+  - perform type checking at runtime
+  - error might not show till program is run
+  - no need to declare datatype of variables
+  - saves time in writing code but might give error at runtime
+  - Example: a = kunal; no issue at compile time and at run time a will be defined as string type
