@@ -1,0 +1,13 @@
+There are two types of memories - Stack and Heap
+
+a = 10 ; 
+
+- here a is a reference variable
+- 10 is the object
+
+Now How it is stored in Memory
+
+Refrence variable is stored in Stack
+Actual object is stored in Heap
+
+Note: 'a' which itself is in Stack, points towards the Heap memory location in actual.

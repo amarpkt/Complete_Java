@@ -34,3 +34,9 @@ Dynamic:
   - no need to declare datatype of variables
   - saves time in writing code but might give error at runtime
   - Example: a = kunal; no issue at compile time and at run time a will be defined as string type
+
+Based on above differences we can say now that the Java Language is STATICALLY TYPED Language.
+
+
+
+

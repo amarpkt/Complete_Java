@@ -1,0 +1,11 @@
+Garbase Collection is Java helps in memory managment
+
+let say a = 10;
+
+later we changed it as a = 35;
+
+now a is just a reference variable which was pointing to 10 but now to 35
+
+10 is an old object and 35 is now a new object 
+but at present 10 is not being pointed by any reference variable 
+thus it will be removed by garbage collector later in Java
