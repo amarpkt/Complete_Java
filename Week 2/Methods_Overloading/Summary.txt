@@ -1,0 +1,36 @@
+- initially we needed the add function to add only two values so we used this function:
+    public int add(int n1, int n2){
+        return n1 + n2;
+    }
+- later we thought to have the functionality to add three numbers so we modified it like this way:
+    public int add(int n1, int n2, int n3){
+        return n1 + n2 + n3;
+    }
+- now the condition is that we are not sure how many parameters we are going to receive from user like 2 or 3 we are not sure
+- in that case we can have two methods:
+    # For three parameters
+    public int add(int n1, int n2, int n3){
+        return n1 + n2 + n3;
+    }
+    # For two parameters
+    public int add1(int n1, int n2){
+        return n1 + n2;
+    }
+    in main:
+    int r1 = obj.add1(3,4,5); or
+    int r1 = obj.add(3,4);    
+
+- Problem is that it's not dynamic in main class, we have to define which method to call like add or add1
+- at this problem state, comes the solution as method overloading:
+    public int add(int n1, int n2, int n3){
+        return n1 + n2 + n3;
+    }
+    public int add(int n1, int n2){
+        return n1 + n2;
+    }
+
+    in Main:
+    int r1 = obj.add(3,4,5);  or
+    int r1 = obj.add(3,4);  
+
+

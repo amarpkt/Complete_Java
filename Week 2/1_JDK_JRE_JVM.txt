@@ -1,1 +1,11 @@
 # JDK vs JRE vs JVM
+Java development Kit
+Java Runtime Environment
+Java Virtual Machine
+
+
+Java code finally runs on the JVM but if some additional files are required then same is present in the JRE
+
+JDK = JRE + Development tools
+JRE = JVM + Library Classes
+JVM = Interpreter + JIT Compiler
