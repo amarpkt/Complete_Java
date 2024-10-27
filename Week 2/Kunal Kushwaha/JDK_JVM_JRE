@@ -1,0 +1,69 @@
+JDK vs JVM vs JRE
+
+at High level ==> JDK >> JVM >> JRE  (Means on top is JDK, then it JRE and innermost is JVM)
+
+
+    .java file   -----------------------------> .class File -----------------------------> Machine code
+(human readable)      --entire file--           (byte code)     --line by line--           (o's and 1's)
+
+
+- this is the source code               - this code will not directly on system
+                                        - we need JVM to run this 
+                                        - This is the reason why Java is Platform
+                                          independent
+
+- So Java compiler (javac) converts the ENTIRE  source code OR .java file into a byte code which is a .class file.
+- This .class file or the byte code can not be run on the system rather we need a JVM to run this.
+- In the end the Java Interpreter in JVM converts the byte code LINE BY LINE into a machine code.
+                                             
+
+The JVM includes both an interpreter and a JIT compiler.
+- When we run the Java Application, the interpreter initially executes the bytecode line by line.
+- The JIT compiler kicks in for frequently used sections of code (known as "hot spots") and compiles them into native machine code for faster executions.
+
+
+Platform Indepenmdent: 
+- It means that byte code can run on all operating system.
+- We need to convert source code to machine code so computer can understand.
+- compiler helps in doing this by turning it into executable code.
+- this executable code is a set of instructions for the computer.
+- After compiling the C/C++ code we get .exe file which is platform dependent.
+- In Java we get byte code, JVM converts this to machine code.
+- Java is platform independent but JVM is platform dependent.
+
+NOTE: BYTE CODE is what makes java Platform independent.
+
+So when we get the byte code generted from a Windows machine then the same byte code can be used to get executable in MAC/Linux machine.
+
+
+
+JDK = JRE + Development tools
+JRE = JVM + Library Classes
+JVM = Interpreter + JIT Compiler
+
+
+Compile Time: 
+        .java file  ------------> .class file  (javac compiler in action)
+Run Time:
+        class Loader ---> Byte Code Verifier ---> Interpreter ---> Runtime ---> Hardware
+
+How JVM Works: 3 Steps
+1. Loading: 
+    - reads .class file and generates binary data
+    - an object of this class is created in Heap
+2. Linking: 
+    - JVM verifies the .class file
+    - allocates memory for class variables and default values
+    - replace symbolic references from the type with direct references
+3. Initialization:
+    - all static variables are assigned with their values defined in the code and static block
+
+
+JVM Executions: Interpreter and JIT Compiler
+Interpreter:
+    - line by line execution
+    - When one method is called many times it will interpret again and again
+JIT Compiler
+    - those methods that are repeated, JIT provides direct machine code, so re-interpretation is not requried
+    - makes execution faster
+    
