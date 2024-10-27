@@ -1,0 +1,12 @@
+Stack and Heap Memory:
+
+Stack : First in Last Out (FIFO)
+Heap : It can expand.
+
+
+class Calculator{
+    int num;                            -- INSTANCE VARIABLE (num)
+    public int add(int n1, int n2){     -- LOCAL VARIABLE (n1 & n2)
+        return n1 + n2;
+    }
+}
