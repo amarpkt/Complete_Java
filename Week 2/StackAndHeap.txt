@@ -3,10 +3,36 @@ Stack and Heap Memory:
 Stack : First in Last Out (FIFO)
 Heap : It can expand.
 
-
+-----------------Method Overloading Example case ----------------------------
 class Calculator{
-    int num;                            -- INSTANCE VARIABLE (num)
+    int num = 5;                            -- INSTANCE VARIABLE (num)
     public int add(int n1, int n2){     -- LOCAL VARIABLE (n1 & n2)
         return n1 + n2;
     }
 }
+public class Demo{
+    public static void main(String[] args) {
+        int data = 10;                          -- LOCAL VARIABLE (data)
+        Calculator obj = new Calculator();      -- LOCAL VARIABLE (obj - refernce variable for object of Calculator class)
+        int r1 = obj.add(3,4);                  -- LOCAL VARIABLE (r1)
+        System.out.println(r1);
+    }
+}
+--------------------------------------------------------------------------------
+
+
+NOTE: Every method will have it's own stack 
+so in Method overloading example we saw two methods - main() method and add() method
+so there will be two seperate stack for these two methods
+
+Main Stack: 
+    r1 = 7
+    data = 10
+    obj = 
+
+add Stack:
+    n1 = 3
+    n2 = 4
+
+heap area:
+    num = 5
