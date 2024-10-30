@@ -28,7 +28,7 @@ so there will be two seperate stack for these two methods
 Main Stack: 
     r1 = 7
     data = 10
-    obj = 
+    obj = 1001
 
 add Stack:
     n1 = 3
@@ -36,3 +36,4 @@ add Stack:
 
 heap area:
     num = 5
+    @1001 = add()
