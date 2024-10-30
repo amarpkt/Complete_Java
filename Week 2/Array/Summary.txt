@@ -47,5 +47,14 @@ Output = 0
 
 
 
+*** Drawbacks of an Array:
+- Array inside java is an object
+        int nums[] = new int[4];  --new keyword means an object creation
+- Thus actual array will be stored in Heap memory
+- And the size of an array is fixed is the one which we count it as drawback.
+
+
+
+***Array Of Objects
 
 
