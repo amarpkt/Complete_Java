@@ -1,0 +1,46 @@
+When you open a code repot on githun then you can see a Green box with code in it.
+we can use this option to clone the code in the our local sytem and make changes
+there are two option for clone: 
+
+        - HTTPS
+        - SSH 
+
+- we will use SSH for now to clone the code in our local system 
+- under the SSH option you can see a path of the repo, say git@github.com:amarpkt/Complete_Java.git for this project
+- we will use this url to clone the code in our system 
+
+
+- Also in order to create your own repo , go to home page there we can use a + symbol which allows us to create a repo for gitHub
+- You need to give a uique name which is not used in your account
+- you can make it public or private depending on your project requirement.
+- you can mention some details in README.md file  (mark down file)
+- once done you'll get the details of how to clone the project in your local git repo to make the changes in the project you're building.
+
+As mentioned above we'll use SSH to clone rather than HTTPS
+- go to your local machine and make a folder there manually or by mkdir GitTest
+- this is also mentioned in step by step manner when you  create the repo in GitHub
+
+Diff in HTTPS/ SSH
+- in HTTPS: you need to login everytimne you're pushing something to gitHub
+- in SSH: you can create a key for one time and add the key into gitHub account and done. you don't need to use login Id or password for any push to remote repossitory
+- thus we will be using SSH for tets purpose. 
+
+
+SSH Setup: 
+- from the system in which you're working and want to push the changes you can use below steps.
+    command: ssh-keygen -o
+    O/P: Enter file in which to save the key : (if you don't want any extra file then hit enter for defaiult location)
+    - Created directory 'C:/Users/PathaA/.ssh'
+    - Enter passphrase (empty for no passphrase): hit enter 
+    - Your identification has been saved in 'your default path'
+    - you key fingerprint is: ############
+    - Key's random image is : ############
+- go to the folder mentioned above in .ssh folder via TERMINAL only
+- ther will be two files id_xyz and id_xyz.pub
+- cat the pub one in terminal itself 
+- now goto the githb > setting > ssh keys > add > name your title and paste the key there
+
+- This will make sure that the push made from this device from where the key is generated shall not be prompted with any error or any login demands
+- this is a one time activity 
+
+- got some issue while working on two system with same login id: need to check and rectify
