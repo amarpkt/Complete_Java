@@ -19,3 +19,7 @@ to add the file to staging area:
 
 
 now the changes are commited to your local repo
+
+
+log
+        git log
