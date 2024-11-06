@@ -1,0 +1,47 @@
+
+String is actually a class.
+- we use String to store a series of characters
+- As the Stirng is a class so we can use it like below:
+    String name = new String("amar");
+    System.out.println(name);
+- Along with the above String can also be initialized as below:
+    String name = "amar";  -- initializing the varible
+
+Lets focus on the later one : String name = "amar" ;
+- here name as a reference variable is stored in stack memory 
+- it stores the location of the location like @101 in its value part (key-value ==> name - @101)
+- and the actual value of the variable name is stored in heap which is "amar" and this value "amar" is stored in heap at location - @101
+
+
+
+***HASHCODE***
+- if you want to check and see the location of the String ref variable then we can do so by this:
+        System.out.println(name.hashCode());
+        O/P: 2997597
+
+
+
+***CONCATENATE***
+- if we want amar to be concatenated with other String like we want to concatenate with "hello"
+- String do now allow us to use any other operator but for concatenate it allows us to use + operator
+
+
+
+***OTHER METHODS***
+- charAt() : to check the value of a character at a particular point
+- concat() : this function works to concatenate the string 
+
+
+***NOTE***
+- so we can see the String is way too usefull for us so java gave this liberty to initialize it with ease: 
+    String name = new String("amar");     <=====>   String name = "amar"
+- we can use either with no issue.
+- we can see the later one is easy
+
+
+
+
+
+
+**** MUTABILITY OF STRING ***
+

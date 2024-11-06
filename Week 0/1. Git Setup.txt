@@ -8,3 +8,16 @@ To Download git for windows:
     - choose windows downlaod 
     - now post installation again restart the cmd or shell and check version 
 
+Now you need to give a name to your system like user name and user email so that when you'll be pushing the code from your local git repo to github then there shall be something which can recognise you as a user.
+- In order to check if there is any user set in your system you can use below command:
+    git config --global --list
+- for the first time if you're doing this then you'll get this output:
+    fatal: unable to read config file 'C:User/PathakA/.getconfig': no such file or directory 
+- so in order to do this setup or to give a username and useremail we have to do this:
+    git config --global user.name "Amar Pathak"
+    git config --global user.email "amarpathak723@gmail.com"
+- now post this setup if we use the command again to check global values:
+    git config --global --list
+    Output:
+        user.name=Amar Pathak
+        user.email=amarpathak723@gmail.com
