@@ -1,0 +1,10 @@
+To check if git is already installed or not: 
+        git --version
+    - if not installed : git not recognized
+    - if installed: git version 2.41.0.windows.3
+
+To Download git for windows:
+    - go to git-scm.com
+    - choose windows downlaod 
+    - now post installation again restart the cmd or shell and check version 
+

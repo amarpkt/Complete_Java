@@ -1,0 +1,21 @@
+let's add a file say firstCode.txt in your working directory
+- now we can check the status : git status 
+- it will show that there is one untracked file 
+
+- now you need to add this file in staging area in order to pick this up while pushing the code to github
+to add the file to staging area: 
+        git add firstCode.txt
+- now again check the status
+        git status
+- this will show that there are some changes to be commited and there you can see your file firstCode.txt
+
+- now the file is in staging area and you can now commit this change to your local git repo
+        command: git commit
+
+- how often to commit : decided by project to project and company to company
+
+- along with commit we need to paas a messae otherwise it won't be commited
+        git commit -m "Initial commit"
+
+
+now the changes are commited to your local repo

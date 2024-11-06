@@ -1,0 +1,25 @@
+Now if we want to create a project then we will create a folder in out system, let say folder name - GitTest
+- now open the folder in VS Code, try to check the status of git here: 
+- to check the status : git status
+            O/P: fatal: not a git repossitory (or any of the project directories): .git
+
+- This is because you have thought to build the project in GitTest folder but git have no idea for this.
+- To resolve this you need to inform to git that this will be your working directory 
+- To do so you need to use the command to initialize the git into same folder:
+- git initialization command: 
+            git init   (this one will create git repossitory to your working directory)
+            O/P: initialized empty Git repossitory in C:/Users/PathakA/Java/GitTest
+- now run the same command:
+            git status
+            O/P:    on branch master
+                    no commits yet
+                    nothing to commit (create/copy files and use "git add" to track)
+
+- now if we need to remove our working directory as git then we need to delete the folder named .git which is created by default when we initialize the git using git init command
+- we can either use rm -rf .git command to delete the folder or else go to your working directory and manually delete the HIDDEN folder .git
+
+- once done you can create again the git repossitory using same command : git init
+- but rather then creating a master branch we can modify the command to create a main branch rather then master
+            git init -b main
+            O/P: initialized empty Git repossitory in "your GitTest Path"
+            

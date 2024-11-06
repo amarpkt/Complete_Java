@@ -55,6 +55,15 @@ Output = 0
 
 
 
-***Array Of Objects
+***Array Of Objects (Demo2.java)
+- this should be clear that holding an array of objects is not possible, rather what we actually see is an array holding reference variables of actual objects. 
 
-
+Example : Student class is ther with some instance variables like name, rollNo, & marks
+- now we will create three objects like s1, s2 and s3 
+- we will then store the reference variables like this:
+        Student  students[] = new Student[3];
+- post creating the students[] array we will populate it with the reference variable created for the three objects - s1, s2, s3
+        students[0] = s1;
+        students[1] = s2;
+        students[2] = s3; 
+- here students[] array is not an ARRAY OF OBJECTS rather it will hold the array of refernce variabls of actual objects. 
