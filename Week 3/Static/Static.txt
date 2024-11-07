@@ -1,0 +1,77 @@
+# Static Variables / Static Block / Static METHODS
+
+
+STATIC VARAIBLE: 
+- Means making a variable as a class member not an object member.
+- In Demo class we see there are three instance variable in class "Mobile" and it is working 
+- In Demo2 class we changed the variable to static and in the end we are chanaging the variable value from 'Smart Phone' to 'Phone' which is affecting all the objects which are using the variable 'name'
+- So STATIC VARIABLES are shared by all the objects.
+- So Static variable is no longer dependent on the Object, because although the two objects obj1 and obj2 are having their own set of declaration i.e. 
+        obj1.name = "Smart Phone"
+        obj2.name = "Smart Phone"
+but once the obj1.name is assigned again then it is affecting the valuue of obj2.name as well
+        obj1.name = "Phone"  -- Now common for both obj1 and obj2
+- That means STATIC VARIABLES shall be called with the class name not the object name. - Demo3.java
+- We can call the Static variables inside a Non-Static method - there is no error in that.
+
+
+STATIC BLOCK:  --Demo4.java & Demo5.java
+- We've seen that static variable is a class member not an object member. 
+- So what if we want to initilialize the static variable via object creation itself: 
+        Mobile obj1 = new Mobile();
+        obj1.brand = "Apple";
+        obj1.price = 1500;
+        Mobile.name = "Smart Phone";
+- Here we can see in above code that Mobile.name is used to initilialize the static variable
+- but we want to get it initilialized at Object creation level:
+        Mobile obj1 = new Mobile();
+- First thing in mind comes up as creating constructor which can be loaded while object creation:
+- referring demo4.java we can see but everytime the object is created the constructor is getting called. like the obj1 and obj2 creation both called the constructor.
+- For this we can use the Class Loader use or i.e. STATIC BLOCK use. - DEMO5.java
+- in Demo5.java we can see that the static block is there where we hava initilialized the value of name as "phone" and removed it from constructor.
+- in result only one time static block is getting called and constructor is still getting called twice with 2 object creation.
+- this static block is getting called because of JVM class loading mechanism. 
+- JVM loads class only once and thus only one time static block is getting called.
+- Everyime the object is creted then there are two steps taken: 
+        Step 1: Class loads
+        Step 2: Object is instantiated
+- In JVM there is a special class where all class loads - "Class Loader" area
+
+- Now Question comes weather it is possible to load class without object creaution. 
+- Yes we can do so using "Class" class and the respective function - forName()  : demo6.java
+                Class.forName("Mobile");
+- with this use now ther is no requirement of Object creation so that class gets load. 
+- we can directly load the class to initilialize the static block.  
+- normally we don't use this feture but now we know how to load a class.         
+
+
+STATIC METHOD:  --demo7.java
+- we can call a static method directly with the help of a class name but we can not call a non-static method with the class name, rather we need the object name. 
+Example: refer Demo7.java
+        Mobile.show();  //not allowed to make a call to a non-static method with class Name
+        Mobile.show1(); //allowed to call a static method from a class Name
+- now a static variable can be used inside the static method but a non-static variable can not be used in a static block
+Example: refer Demo7.java
+        public static void show1(){
+        System.out.println("In Static Method");
+        // System.out.println(brand + " : " + price + " : " + name);
+    }
+- here only name is allowed as being static, but brand and price are throwing compilation error
+Why is this so ??
+- See name is a static varibale and it is associated with class, so when we call Mobole.show1() then show1 knows that name is class specific which is same for all.
+- but if we call Mobile.show1() and show1() has brand and price which are object associated so JVM will not be able to understand which objects brand or price shall be assigned to show1()
+- but there is one way to do so : demo8.java
+- we can use the object so that we can assign the variable to a specific object say obj1 or obj2
+        Mobile.show1(obj);
+
+        public static void show1(Mobile obj){
+               System.out.println(obj.brand + " : " + obj.price + " : " + name);
+        }
+- now there is no problem and no compilation error as well.
+
+
+WHY MAIN METHOD IS STATIC?
+- if we don't create main() method static that means in order to call the main() method we need to create the object of Demo class
+- but how can we create the Demo class object when we can't instantiate a class
+- thus making main() method static helps us to not create the Demo class object
+

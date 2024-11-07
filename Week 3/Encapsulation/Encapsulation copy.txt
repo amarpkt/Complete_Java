@@ -1,0 +1,20 @@
+Encapsulation:
+- here we will see how we can bind the data with methods
+- in Demo.java we can see that there are two variables name & age in Human" class which is being directly accessed via "Demo" class
+- But this situation as demostrated in Demo.java is not matching with the real world. No one shall be able to access the data directly. 
+- That means we need to bind this data in such a way that one can acces but not directly.
+
+- Here comes the requirement of Encapsulation of Data and methods
+
+Demo1.java:
+- We will make the variables first private so that the variables shall be accessible in the own class i.e. inside the Human class only.
+- The moment we make the two variables private then it will throw an error in the Demo1.java class
+    private String name;
+    private int age;
+
+Error: The field is not visible
+Solution: we will use some public methods so that with the help of these methods we can use the private variable.
+- once the variabls are privatem then we can create a public method getAge() and getName() to fetch name and age of obj object.
+
+
+- In a similiar way we can use the set Methods to set the values - Demo2.java

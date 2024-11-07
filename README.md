@@ -11,7 +11,7 @@ Here I'm trying to push certain handout related to my Java Learning
     - Stack and Heap Memory
     - Methods, Method Overloading
     - Arrays
-    - String, String Fucntions, Mutability and immutability, String Buffer and Loader, String Constant Pool
+    - String, Mutability and immutability, String Buffer and Loader, String Constant Pool
 
 
 07th November 2024
