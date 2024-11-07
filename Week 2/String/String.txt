@@ -14,10 +14,18 @@ Lets focus on the later one : String name = "amar" ;
 
 
 
+
+
+
+
 ***HASHCODE***
 - if you want to check and see the location of the String ref variable then we can do so by this:
         System.out.println(name.hashCode());
         O/P: 2997597
+
+
+
+
 
 
 
@@ -27,9 +35,18 @@ Lets focus on the later one : String name = "amar" ;
 
 
 
+
+
+
+
 ***OTHER METHODS***
 - charAt() : to check the value of a character at a particular point
 - concat() : this function works to concatenate the string 
+
+
+
+
+
 
 
 ***NOTE***
@@ -37,6 +54,7 @@ Lets focus on the later one : String name = "amar" ;
     String name = new String("amar");     <=====>   String name = "amar"
 - we can use either with no issue.
 - we can see the later one is easy
+
 
 
 
@@ -67,6 +85,11 @@ Output:
 - This means STRING ARE IMMUTABLE (can not be changed)
 
 
+
+
+
+
+
 **** STRING CONSTANT POOL ***
 - Taking advantage of String immutability feature, Java has tried to save memory using the concept of String constant pool (SCP).
 - Now let's say you have two Strings s1 and s2 both having same values in heap:
@@ -82,3 +105,37 @@ Output:
 
 - now both s1 and s2 points to @101, and saves space.
 - this can be validated by checking the hashCode of the two reference variables s1 and s2. both will be same.
+- To get rid of this mutability issue we have two option of String: 
+    1. String Builder
+    2. String Buffer
+
+
+
+
+
+
+
+**** STRING BUILDER & STRING BUFFER ***
+String Buffer: It will give you a buffer in character string it holds. 
+    - even an empty StringBuffer object has a capacity of 16 bytes.
+
+StringBuffer sb = new StringBuffer("navin");
+- her capacity will be 5 + 16 = 21 bytes
+- so in case some addition or concatenation is required then it has not to look for an empty space rather it will utilize the 16 bytes of buffer space. 
+
+sb.capacity() = 21
+sb.length() = 5 
+
+capacity() and length() are different.
+
+-Append() method can be used to append the string in existing one
+
+-toString() method  can be used to get the String form from StringBuffer
+        StringBuffer sb = new StringBuffer("navin");
+        String str = sb;            //NOT ALLOWED --It's a type mismatch error can not convert StringBuffer to String
+        String str = sb.toString(); //ALLOWED 
+
+- deleteCharAt() mehtod to delete a character from a StringBuffer.
+- insert() method to insert a character into a StringBuffer.
+
+
