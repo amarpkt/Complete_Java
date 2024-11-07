@@ -43,5 +43,42 @@ Lets focus on the later one : String name = "amar" ;
 
 
 
-**** MUTABILITY OF STRING ***
+**** MUTABLE v/s IMMUTABLE STRING ***
+- Strings are used very heavily in Java, that we use same String again and again multiple times.
+- Once String is created then it can not be changed and that's final, no if and buts.
+- Meaning when a String object is creted then that object which is created in Heap can not be changed. 
+- If any chnage is made using + operator or concate fn, then a whole new object gets created and the older one's reference is gone which will be handled by garbage collector later.
 
+Example: 
+    String name = "naveen";
+    System.Out.println(name);
+    System.Out.println(name.hashCode());
+    name = name + " reddy";
+    System.Out.println(name)
+    System.Out.println(name.hashCode());
+Output: 
+    naveen
+    -1052563509
+    naveen reddy
+    -978592687
+
+- here we can see that same referene variable is poinitng to two different object location as because of diff hashCode post concatination and pre-concatination.
+
+- This means STRING ARE IMMUTABLE (can not be changed)
+
+
+**** STRING CONSTANT POOL ***
+- Taking advantage of String immutability feature, Java has tried to save memory using the concept of String constant pool (SCP).
+- Now let's say you have two Strings s1 and s2 both having same values in heap:
+    String s1 = "Naveen";
+    String s2 = "Naveen";
+- now just we know String is Immutable thus the objects can not be changed by any means so java made a String constant pool under which when s1 is assigned an address @101 to store "Naveen" then for s2 it will not create another object with same value "Naveen"
+
+    Stack: 
+        s1 - @101
+        s2 - @101
+    Heap: 
+        @101 - "Naveen"
+
+- now both s1 and s2 points to @101, and saves space.
+- this can be validated by checking the hashCode of the two reference variables s1 and s2. both will be same.
