@@ -1,0 +1,32 @@
+constructor is a method which has same name as class
+
+Case: When we create an object of a class, say a class having two varibles - name and age, the variables have a default value.
+refer Demo.java
+
+- here we can see before assigning values there is some default value to both name and age
+
+- so the requirement is that what if we want that when an object is created then at the same time some default value shall get assigned like rather then 0 age we need a min age shall be assigned as 12
+- for this we can use the concept of the constructor
+
+
+constructor: it looks like a method 
+- it has same name as of class
+- there is no return type
+
+Demo2.java
+- in Demo2.java we have added constructor
+- in Demo.java we have not added it and can see that the output is null : 0 - the default values
+- in Demo2.java we have added a constructor and can see without assigning the values from objects reference variable obj.setAge() and obj.setName(), we have recived the output as some default values which is [ Jhon : 12 ]
+
+Question: why don't we assign the values directly at the time of instance variable declaration ?
+Ans: We can do but the rule or we can say the standards followed by java is that if you have to do any task, do it in the method properlyu.
+
+Use Cases:
+- When we are trying to connect to DB, we need to write the connection, then we can write the connection details in the constructor itself. 
+
+
+We have two constructor types:
+- Default constructor(no Parameters)
+- Parameterized constructor (with Parameters)
+
+

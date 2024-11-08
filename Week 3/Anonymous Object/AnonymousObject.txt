@@ -1,0 +1,23 @@
+Referenced Objcet v/s Anonymous Object
+
+Refer Demo.java
+-Here we can see that we're creating the object and storing the object refernce in a reference variable
+    A obj = new A();
+
+- here new A() is the actual object which is being stored in a reference which is obj
+- so the object which gets stored in a reference is known as "Referenced Object"
+
+
+Q: Does new A() is actually an object?
+A: yes we can verify this in Demo2.java
+
+Demo2.java
+- Here we have created a class A and have added a constructor so that whenever an object is created a line gets printed
+- now when we write new A() ; ====> we saw that the object is getting created in the output
+- now we are not storing this object into any reference, and this type of object is known as "Anonymous Object"
+
+Anonymous Object:
+- this can not be reused
+- used only once when required. Example:
+    new A().show()
+- as there is no reference variable used so we can not reuse the object.

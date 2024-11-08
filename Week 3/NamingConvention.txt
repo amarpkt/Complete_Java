@@ -1,0 +1,17 @@
+Name Start with :
+Class, interfaces - Capital : Calculator, Demo, Human, Runable
+variables and methods - Small : marks, show()
+Constants - All Capital - PIE, BRAND        
+
+Two words : like "show my marks" written as :  
+showMyMarks() - Camel case
+MyData: class name 
+
+in some other languages : snake casing 
+show_my_marks()
+
+
+Example:
+age : variable
+DATA: Constant
+Human() : constructor - first letter capital (class) & braces means constructor
