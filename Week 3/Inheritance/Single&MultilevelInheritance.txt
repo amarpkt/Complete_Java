@@ -1,0 +1,27 @@
+lets say we have a Calc and AdvCalc and now we want to build a class with very advance feature like "VeryAdvCalc.java"
+
+--Refer Demo2.java
+we can see we have added a new class VeryAdvCalc and ther we added only one feature which is power feature
+- and in return only by extending the AdvCalc we got all the featuer because internally AdvCalc is also extending the Calc class
+- thus in the end VeryAdvCalc has features of AdvCalc and Calc both
+
+
+Calc >> AdvCalc >> VeryAdvCalc   ===> Multilevel Inheritance
+Calc >> AdvCalc                  ===> Single Level Inheritance
+
+
+
+
+Multiple Inheritance:
+- Means one child having multiple Parent class 
+- this one is not possible in Java - Not Allowed
+- Solution to achieve multiple Inheritance is Interface.
+
+
+Why not allowed ? 
+- In a condition where if a class is having 2 parent: 
+Example: Class A extednds Class B and Class C
+- and we created an object of class A = obj
+- we want to call a method show() which is present in both class B and C
+- in this case we're at "AMBIGUITY" as class A is not sure which parent class to ask for method show(), from B or from C
+- So to avoid any runtime failure java does not supports the Multiple Inheritance. 

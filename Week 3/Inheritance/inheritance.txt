@@ -1,0 +1,50 @@
+refer Demo.java
+- when the .java file is compiled then a .class file is created 
+
+in Demo.java we have two classes - Demo and Calc
+- so once it is compiled then two .class are created : Demo.class and Calc.class
+
+
+- now we have a class Calc and there we have two features add and sub and I charge $10 for this feature.
+- later the client comes and ask for 4 features Calc i.e. add, sub, mul, div for which I can charge $15 
+
+Solution: 
+- either we can add the 2 feature of mul & div but if someone will come for only 2 feature then we don't have such product as we made the changes in the existing product.
+- Better solution will be to make a new Cals say Advance Calculator and two feature there - mul & div and extend the feature of the Calc class in that so that in the end the Advance calculator shall have total 4 features
+
+So we added a new class AdvCalc and extended the Calc class
+- this is the reason when we created the object obj2 which is from AdvCalc but still obj2 is able to call add and sub method of Calc class
+
+
+- now We have two product Calc and AdvCalc which we can sell for $10 and $15 respectively
+
+
+NOTE: AdvCalc needs .class file of Calc so if you will delete the .java file of Calc then also it will work without any issue.
+This AdvCalc = Sub class
+This Calc = Super Class 
+To Inherit we use a keyword : Extends
+
+
+
+
+
+
+***NEED OF INHERITANCE****
+- Inheritance can be understood with the help of IS HAS keywords.
+
+HAS: 
+- A house has a fridge
+- A house has a tv
+- A house has a furniture
+
+IS: 
+- A laptop is a Computer
+- A phone is a Computer
+- A Desktop is a Computer
+
+So here Laptop, Phone and Desktop inherit the properties of a Computer
+- so when the relationship can be described as a IS keyword relation then its an Inheritance example.
+- In a similiar way Advance Calculator is a Calculator
+- AdvCalc Inherits the properties and behaviour of Calc class.
+
+SO need of Inheritance is that when we already have something build then rather then making changes in the same class we make a new class which is sub class, base class and inherit the properties in it from its parent class or Super class.
