@@ -1,0 +1,5 @@
+getAge() and setAge() this is for getter and seeter. 
+
+Though it's not a compulsion to use this nomenclature but we need to know that our code is not going to be confined to us only.
+rather it will be used by other developers as well.
+so just for the sake of convinience we have used this nomenclature.

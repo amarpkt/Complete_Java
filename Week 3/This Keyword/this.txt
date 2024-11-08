@@ -1,0 +1,76 @@
+Demo.java
+- here in setter function we saw that:
+     public void setName(String n) {  // n is local variable, name is Instance Variable
+        name = n;
+    }
+
+     public void setAge(int a) {  // n is local variable, age is Instance Variable
+        age = a;
+    }
+- Here it is clear that age,name is Instance variable and a,n is Local variable
+-Output : Navin : 30
+
+
+
+Demo2.java: 
+- Output: Navin : 0
+- Here we have modified setter for age: 
+    public void setAge(int age) {  // n is local variable, age is Instance Variable
+        age = age;
+    }
+
+- now here we're not sure weather age is local or instance variable - also we receive a warning for same
+- Lets see in memory, we know every method has its own stack: so main() and setAge() both have seperate stack
+- lets see the case of Demo.java first 
+main stack:
+    obj : @101
+
+setAge Stack:
+    a = 30 
+
+Heap:
+    @101(Human Object):
+        age = 30
+
+this explains how age value is set to 30 in Main
+Flow: 
+JVM Loads Demo > In Human Obj setAge() is called with argument as 30 (a = 30)
+    public void setAge(int age) {  
+        age = age;
+    }
+> here a = 30 is received from main()
+> inside the setAge, we have instance variable age which gets assigned the value of a 
+> age = a ==> age = 30 assigned
+thus age is set to 30
+
+
+Now lets see the case of Demo2.java
+> main method loads
+> setAge is called with argument 30 : obj.setAge(30)
+> flow reaches to setAge() method with argument as AGE  = 30
+> now the method looks like this:
+    public void setAge(int age) {  
+        age = age;
+    }
+> now argument has value 30 but we know priority is always high for local variable
+> thus JVM treats the age variable as local variable
+> so here age = age is local variable setting value of local variable
+> although the argument comes correct i.e. 30 but the value is still treated as local variable value
+> JVM was unable to identify that the first age is instance variabl in age = age ;
+> thus Instance variable value gets unassigned and remained at default value which is 0
+
+This Output : Navin : 0
+
+Problem : JVM was unable to identify that which one is the local variable and which one is the local variable
+Solution: we need to differentiate the two variable with some form 
+Thus THIS KEYWORD comes into picture
+
+this.age = age means fist age is Instance varible and the later one is local variable.
+
+
+Demo3.java: Correct form 
+
+
+
+
+
