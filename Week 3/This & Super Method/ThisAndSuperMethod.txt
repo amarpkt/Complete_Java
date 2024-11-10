@@ -1,0 +1,35 @@
+Demo.java: 
+- first we will create the B object without parameter, output will be: 
+        B obj = new B(5);
+        O/P:    in A
+                in B
+- Then we tried to call Parameterized one for B: 
+        B obj = new B(5);
+        O/P:    in A
+                in B Int
+
+Question comes : why "in A" is present in Output
+- We can understand the o/p "in B" and "in B Int" that is because of default and Parameterized object call.
+- but why "in A" is in Output. 
+Answer: Because of presence of Super()
+
+Super() : means call the Constructor of Super class - parent class
+
+super(): To remeber we can consider super() method as like "Jhon Cena"
+- it is always there but you can't see it. 
+- weather you mention it or not the super() method is there in every Constructor in Java.
+- the position of super() method is always on the first line of Constructor:
+        public B(){
+        super();
+        System.out.println("in B");
+    }
+- Weather you mention this super() or not, it is always present at this point.
+
+
+Demo2.java
+- here insider super method we passed an argument as 5.
+- thus while calling parent/ super class Constructor it will call the Parameterized Constructor of A:
+        
+        B obj = new B(5);
+        O/P:    in A int
+                in B Int
