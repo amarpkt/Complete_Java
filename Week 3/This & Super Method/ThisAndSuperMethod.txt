@@ -33,3 +33,29 @@ Demo2.java
         B obj = new B(5);
         O/P:    in A int
                 in B Int
+
+
+Object Class: In Java every class is extending Object class.
+- Also point to remmber is that class A also extends Object class. thus Constructor of class A has also a super method in it, and 
+this super method calls internally the Constructor of class A.
+
+
+
+
+
+
+******* this() method ************
+Ques: Can we call the B class object and can call both the Constructors of class B ?
+in A
+in B
+in B int 
+this is what we are expecting. 
+Ans: refer Demo3.java
+Here comes the use of this() method.
+
+first B Parameterized one is called 
+and because of presence of this() it will call default Constructor of B class.
+B class Constructor internally calls the Constructor of class A
+so A class Constructor prints - "in A"
+then B class default Constructor is called which calls A class Internally to call the mehod -- "in B"
+then B class Parameterized Constructor is called and it prints - "in B int"

@@ -18,11 +18,12 @@ class A{
 
 class B extends A{
     public B(){
-        super(5);
+        super();
         System.out.println("in B");
     }
 
     public B(int n){
+        super(5);
         System.out.println("in B int");
     }
 }
