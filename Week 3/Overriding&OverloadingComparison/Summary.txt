@@ -1,0 +1,27 @@
+Here we want to compare the differences in the two concepts which is method overloading and method overriding:
+
+
+Method Overloading:  Demo.java
+- in this part we can see that there are two methods in a single class.
+- the two method differ in their arguments, or the datatypes
+- here in Demo.java we can see that there are two methods named add and add
+- same name but differ in number of arguments
+- so we have overloaded the class with two methods with same name but depend on the requirements, 
+    the respective method gets called itself.
+
+
+Method Over-riding: Demo2.java & Demo3.java
+- in Demo2.java when we call the child class object which is AdvCalc then there is no method found by the 
+    name add(), thus it called parent class i.e. Calc class method add().
+- in Demo3.java when we call the child class object which is AdvCalc then there is a method found by the 
+    name add(), thus the child class method add() gets called and the respective output prints.
+- this is called as method overriding.
+
+
+
+Illustration: 
+- I'm Amar and I'm child of my father.
+- I don't have a phone with me as I'm not old enough to carry a phone.
+- when someone asks me what phone I do have, i usually say I've Nokia 3310 which is originally my fathers phone.
+- but when I'm old enough to carry a phone then I bought Motorolla phone. 
+- now if someone asks me which phone I do have, I say I have Motorolla phone.

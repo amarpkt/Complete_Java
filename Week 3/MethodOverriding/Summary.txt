@@ -1,0 +1,21 @@
+Demo.java: 
+- in class A we've a method named show(). 
+- when we call Object of B, then it calls the method show() of A class
+- This is possible because of parent child relationship.
+- B is child of A, so all the methods of class A will be available to class B also.
+- in similiar way when we call object of class B:
+        B obj = new B();
+- here with reference of class B object 'obj' we can call A method show()
+
+then the output will be : "in A Show"
+
+
+
+Demo2.java:
+- here we're calling Object of B only.
+- but the same method show() is also present in B class.
+- then JVM will execute the show() method of class B only.
+- Here JVM has overrided the show() method of class A which is parent class 
+
+This is known as method overriding. 
+

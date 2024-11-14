@@ -1,0 +1,30 @@
+- Access modifiers comes into picture because of Packages.
+
+Types:
+    - Default
+    - Public
+    - Private
+    - Protected
+
+A good code practice shall be like" 
+    Variable: Private
+    Methods: Public
+
+-----------------------------------------------------------------------------------------
+               |   Private  |     Protected     |     Public        |      Default      |
+_______________|____________|___________________|___________________|___________________|
+Same Class     |   Yes      |       Yes         |       Yes         |       Yes         |
+               |            |                   |                   |                   | 
+               |            |                   |                   |                   |
+Same Package   |    No      |       Yes         |       Yes         |       Yes         |       
+subclass       |            |                   |                   |                   |
+               |            |                   |                   |                   |
+Same Package   |    No      |       Yes         |       Yes         |       Yes         |
+non-subclass   |            |                   |                   |                   |
+               |            |                   |                   |                   |
+Diff Package   |    No      |       Yes         |       Yes         |       No          |
+subclass       |            |                   |                   |                   |
+               |            |                   |                   |                   |
+Diff Package   |    No      |       No          |       Yes         |       No          |
+non-subclass   |            |                   |                   |                   |
+-----------------------------------------------------------------------------------------
