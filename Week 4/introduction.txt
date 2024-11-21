@@ -1,0 +1,13 @@
+Week 4 covers:
+- Polymorphism
+- Dynamic Method Dispatch
+- Final Keyword
+- Object Class equals toString hashcode
+- upcasting & downcasting
+- wrapper Class
+- Abstract Class
+- Inner Class & Anonymous Inner Class
+- Abstract & Anonymous Inner Class
+- Interface, 
+- Enum, Enum if & Switch
+- Annotation

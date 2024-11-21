@@ -1,0 +1,25 @@
+Polymorphism : Poly  +  Morphism 
+Poly - Many
+Morphism - Behaviour
+
+
+                                Polymorphism
+                                    |
+                                    |
+            ________________________|____________________________                                    
+            |                                                    |   
+            |                                                    |
+    Compile Time Polymorphism                           Run Time Polymorphism
+    (Eg. Method Overloading)                           (Eg. Metnhod Overriding)
+
+
+
+## Why Method Overloading is an Example of Compile time Polymorphism?
+Ans: Here in Method overlaoding the method binding is static and which method to call is determined at compile time via COMPILER
+
+
+## Why Method Overriding is an Example of Run time Polymorphism?
+Ans: Here in Method overriding the method binding is dynamic and which method to call is determined at run time via JVM
+
+
+Rest things can be clarified in Dynamic Mehtod Dispatch

@@ -1,0 +1,21 @@
+Demo.java
+- this is just for understanding relationship of parent and child. 
+- we can see laptop extends Computer, that means laptop is a computer.
+
+Demo2.java
+- Here we can see that B class object is created and because of methpd overriding the show method of A got printed
+
+
+Demo3.java
+- we saw that refernce variable of type A but the actual object is of type B
+    A obj = new B(); --Where B is a child class of A
+- Here we can see that we're creating refernce of parent class and the actual object is of child Type
+- This is called as Dynamic Method Dispatch
+- RESULT: It will always print the method of child class
+
+    A obj = new B(); ==> "in B Show"  ( where B is child and A is parent)
+    A obj = new C(); ==> "in C Show"  ( where C is child and A is parent)
+
+
+
+

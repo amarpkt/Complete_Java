@@ -1,0 +1,39 @@
+Final can be used with a varible, a method and a class as well.
+
+
+Final Variable: Demo.java
+- once a variable is declared final then the value can not be changed ever.
+- if you've only declared but not assigned any value then you can assign only once.
+
+final int num = 9;
+num = 10; // Not Allowed
+
+final int num;
+num = 9; //Allowed
+num = 10; //Not Allowed
+
+
+
+
+
+
+Final Class: Demo3.java
+- the class declared final can not be inheritted 
+- no one can extend a final declared class
+- use case: Demo4.java
+    . Here in Demo4.java we can see that the owner of Calc class is "Amar" and there is a child class AdvCalc which extends Calc class
+    . We can see by utilizing the feature of Method Overriding AdvCalc class can take credit by printing the owner name as "Naveen"
+    .in order to avoid this we can make Calc class final and no one will be able to inherit the class Calc 
+
+
+
+
+
+
+Final Method: Demo2.java
+- this final mehtod also does the same job as final class
+- final method is preventing method overriding 
+- lets say you have multiple methods like owner(), show() etc. and you want to secure only owner() method rather than all then 
+   we can use final method.
+- here show method is just printing the class name only in which owner credit kind of thing does not exisit so we can leave 
+    show() method non-final

@@ -1,0 +1,64 @@
+Agenda: 
+- Every class in Java extends the Object class.
+- Everytime we print an object, it calls a toString() method. (even you don't mention)
+
+
+NOTE: You might have obsderved many a time that when we create an object an accidently print that object then it will print a hexadecimal value of the object's reference variable. 
+So this hexadecimal value is a by default funtionality of the Java.
+Example:
+
+Demo.Java
+- here we have created a class Demo.java and inside this an Object is created Laptop.java
+- when we tried to print the obj object then result is : Laptop@4e4aea35
+
+Laptop@4e4aea35
+Explanation: weather we mention or not there is a toString() method present. 
+i.e. obj.toString();
+
+this toString() method is present in Object class which is as below:
+    public String toString() {
+        return getClass().getName() + "@" + Integer.toHexString(hashCode());
+    }
+
+- thus this justifies the result of printing Laptop@4e4aea35
+- first part is class Name: Laptop
+- then is @ symbol 
+- then is the hashCode of the object in string form.
+
+
+- There are two methods - toString() and equals() present in the object class which is inheritted when the same is not defined inside the parent class Laptop.
+- lets see this by an example: 
+
+
+
+Demo2.java: toString() method
+- here we will see that what will happen if we define a toString() method in the Laptop class
+- definitely this way toString of object class will not be used because of inheritance concept.
+- we know a toString() method will be called irresepective you write or not. 
+- so here in Demo.java it will find the toString() method present in the Laptop class and need not to go to parent class Object 
+- we can try by removing the toString() method from Laptop class 
+    it will print hexadecimal value
+- also if we can add the toString() method, it will print "hey" as mentioned
+
+Note: the IDE also gives a toString() method which can be utilized to print all instance variables of the Laptop class.
+
+
+
+
+Demo3.java: equals() method
+- equals() method is used to compare two objects obj1 and obj2
+- we can see initially in Demo3.java it says false when we compare, although the values are exactly same for the instance variables of the Laptop class for both objects obj1 & obj2
+- we can check this by activating our defined toString() method and can see that the values are same for both the objects but equals() method says false
+- Reason: becasue it is still comparison is being made with the hascode of the two object.
+- for this reason we can define our own equals method
+- this can be validated by comparing the sysout values of the two hashcode, which you'll find differen in the two objects.
+
+
+
+
+Demo4.java: equals() method manually created
+- here we can see that we are not using == for Model which is String as it was being used in default equals() method of Object class.
+- this is why it compared the actual value rather then the hexadecimal values of the two objects.
+- here the response will be true.
+
+Note: similiar to toString() method we can use IDE to give hascode() and equals() method for us.
