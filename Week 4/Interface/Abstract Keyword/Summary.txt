@@ -1,0 +1,59 @@
+Abstract Keyword:
+Demo.java:
+- in this class we can see that we have no implementation for method drive():
+
+        public void drive(){
+        }
+
+- this is the case when we only want to declare the method in the class but don't want to have an implementation for same.
+- Example: Car is a concept only release by Govt. and now Govt said whosoever is launching there car in Market must abide by there rules like:
+    . a car must drive
+    . a car must have 4 wheels
+    . a car must have gear shift etc.
+
+- so we have here the Car skeleton we can say, where we have only decalred the method drive() and whosoever is laucnhing there car
+    must implement the features defined in the car skeleton.
+
+- thus here rather than using opening and closing braces we can use this to demostrate that we are declaring a method only:
+         public void drive(); //we'll see what changes are required to declare a method like this without implementation logic in it.
+
+
+
+
+Demo2.java:
+- here we can see that we have a class WagonR which is inheriting the Car class using extend keyword
+- WagonR class needs to extend the Car class 
+- for method declaration drive() we need to add a keyword abstract in it:
+        public abstract void drive();
+- now if a class is having the abstract method, that class also needs to be be an abstract class:
+        abstract class Car{
+            public abstract void drive();  
+        }
+- Now it's complete.
+
+- In order to extend an abstract class the inheriting class needs to implement all the abstract method also. 
+
+
+NOTE: 
+- for just declaring a method without implementation we need to add an abstract keyword
+- class having abstract method in it must be an abstract class as well.
+- the class inheriting an abstract class must implement all the abstract method of the abstract class
+- you can not create the object of an abstract class, but can have an abstract reference without any issue.
+        Car obj = new WagonR();  -- Allowed
+        Car obj = new Car();     -- Not Allowed
+- We can habe either all method abstract in an abstract class or none at all --> No error
+- An Abstract class can inherit an Abstract class: no issue with this
+
+
+
+
+Demo3.java:
+- first of all its compulsory to define all the methods of an abstract class if you're inheriting that class :
+        class WagonR extends Car then we must define all abstract methods of Car class.
+- but if we don't want this then we have to make the implementing class as well an abstract class
+YES: An Abstract class can implement an Abstract class:
+    abstract Class WagonR implement
+- here we have an abstract method fly() in Car class, which was not implemented in WagonR class, thus we have to make the WagonR
+    class an abstract class.
+- here in this case we need to have one more class say AdvancedWagonR class which implements the fly() method. 
+

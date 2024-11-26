@@ -1,0 +1,33 @@
+Inner Class: the class inside a class is called an Inner class.
+
+Demo.java:
+ - we can see that class B is an Inner class which is declared inside the class A
+ - when we will compile the code then also along with the .Class file of class A, we will see that .Class of Class B is also created.
+
+- The only point to note here is that how an object of class B is created.
+- we can understand this by calling show method. How we call show() method:
+    A obj = new A();
+    obj.show();
+- that means if you need to call any method of A, you need object of that class A
+- similarly if we need an object of B class then we need to call it by using Object of class A. 
+- but reference can be directly taken from class name like this:
+    A.B obj2; //here we've not created the object of class B, only reference of B class object is created.
+- now to create the object of B: 
+    A.B obj2 = obj.new B();  //Just like we called obj.show();
+
+
+
+Also we know that we need to take support of the object only fot non-static classes.
+so let's make the class B as static class:
+Demo2.java: 
+- See the difference in object creation: 
+- we needed the object of class A but here we don't need it:
+- Here is the comparison of two: 
+
+1. non-static: Demo.java 
+        A.B obj2 = obj.new B();
+        obj2.config();
+
+2. static: Demo2.java
+        A.B obj2 = new A.B();
+        obj2.config();
