@@ -1,0 +1,24 @@
+We know java is having primitive data types : int, float, double etc
+this makes it not purely OOPS language
+
+There are certain frameworks which can only work with Objects.
+
+Java has Wrapper class which is a sort of replacement for primitive data types of Java.
+
+int --> Integer
+char --> Character
+double --> Double etc
+
+these wrapper classes objects can be created and used inlike primitive data types
+
+int num = 7;
+System.out.println(num);
+
+Integer num2 = new Integer(num);  //Boxing
+Integer num3 = num;               //Auto-Boxing (Happening Automatically)
+        
+int num4 = num2.intValue();       //Un-Boxing
+int num5 = num2;                  //Auto-Unboxing (Happening Automatically)
+
+String str = "12";
+int num6 = Integer.parseInt(str);  //Integer.parseInt is also a useful method

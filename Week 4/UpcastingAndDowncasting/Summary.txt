@@ -1,0 +1,31 @@
+Upcasting & Downcasting: 
+
+int i = 5;
+double j = i;
+sysout(j);  --> No Error as j can store by appending .0 
+Ouput = 5.0
+
+BUT:
+double i = 4.5;
+int j = i;
+sysout (j); --> Error: Incompatible type conversion
+Solution: 
+int j = (int) i;
+sysout(j); --> Conversion done but with some data loss
+
+
+
+
+
+Demo2.java:
+- A is parent and B is child class.
+- now If we create object of B using reference of B then its a Downcasting and is allowed 
+
+But if we call object of B using reference of A then it's not allowed but we have a solution:
+
+A obj = new B();  ==> A obj = (A) new B();   ==> this is implicitly done. so no need to choose 2nd alternate
+
+And if we try to use same object obj to call reference of B:
+B obj2 = obj;     --> Not allowed --> as B is child and A is parent and solution is :
+B obj2 = (B) obj; --> Allowed now
+
