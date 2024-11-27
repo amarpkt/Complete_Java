@@ -1,0 +1,40 @@
+Anonymous means something which does not have a name.
+
+Demo.java: 
+- we can see how show() method is behaving. 
+- Now I want to chanage the behaviour of the show() method how it behaves
+Solution: We can create class B which inherits class A and also have show() method in it.
+and when required we can create the object of B with reference of A 
+- For reference see Demo2.java
+- we can see the output : "In B Show"
+
+
+Problem: now the only problem is that  there will be many a time when we will come across this situation when we need to create a child
+         class just to implement a single method
+         - As we can see the class B, the only function of class B is to inherit the class A and allow code to override the 
+            parent class A method show() so that we can get a changed behavior of same method.
+        - result: we don't have to do much changes in main method, as the obj.show() is still same. only thing that changed to 
+            get this result is this:
+                A obj = new A();  -------> A obj = new B();
+
+Solution : Anonymous Inner class
+- this class does not have any name : Refer Demo3.java 
+- In  Demo3.java, we can see that we've defined the class functionality inside the object creation line itself:
+
+    A obj = new A();
+    obj.show(); 
+    Result ==> In A Show
+
+    A obj = new A(){
+        public void show(){
+            System.out.println("In New Show);
+        }
+    };
+    Result: In New Show
+
+
+Verification: This can be verified by compilatio difference of Demo2.java and Demo3.java
+- in Demo2.java, there will be a .class creation of Class B
+- while in Demo3.java, there is no A$1 .class formation for the Anonymous class created inside class A object creation.
+- this is becasue it is creted inside the A class and without name so called Anonymous Inner Class
+ 
