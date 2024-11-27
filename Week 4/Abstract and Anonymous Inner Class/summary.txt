@@ -1,0 +1,19 @@
+We know abstarct and Anonymous inner class, lets join it in this case.
+Demo.java: this is our again base concept. 
+
+Now here we want to make show() method abstract, so we need class A also as abstarct class.
+Demo2.java:
+- Here when we make class A as abstarct then we can't create object of class A in main method. 
+- Thus we need a seperate class which will inherit the abstract class A ans will have a show() method implementation as well because
+    abstract class A has only A method defintion only in it.
+- now again in Demo2.java, we can see the only requirement of class B is to implementation and define the show() method, which
+    is again single use only.
+- This compells to use the concept of Anonymous Inner class here now.
+
+Demo3.java:
+- here we can see that we have inserted an inner class inside object creation line in main() method.
+
+NOTE: We're not creating the object of abstract class A, as the same is not allowed by Java.
+- rather we tried to create an object of Anonymous Inner class which is defined in Object ceation line.
+
+- This Anonymous Inner class concept is much useful in Interfaces and Abstract
