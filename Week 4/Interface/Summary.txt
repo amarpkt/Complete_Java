@@ -1,3 +1,49 @@
-Interface: 
+Interface: a Pure Abstract
 - Interface is also an abstract class but this is just a method of writing an abstract class. 
-- One benefit of writing an interface is that when we write 
+- One benefit of writing an interface is that when we write interface to demonstrate that the class is an abstract class, 
+    what we get by default is that all the methods inside the interface (which is actually an abstract), would be public and abstract:
+
+Demo.java: 
+- class A is abstract class
+- class B is also an abstract class but is a pure abstract so we wrote interface
+- In class A, all method must not be abstract, some can be non-abstract also.
+- In class B (interface B), all methods are abstract. (also we don't explicitly write abstract but they are)
+
+Object creation:
+- for both abstract and interface, we can not create an object, though we can initilize with no problem.
+Ex: A obj1 = new A(); --> Not Allowed
+    B obj2 = new B(); --> Not Allowed
+
+    A obj1; --> Allowed
+    B obj2; --> Allowed
+
+Inheritance: 
+- for abstract class --> EXTENDS
+- for interface --> IMPLEMENTS
+Example: class C extends A
+         class D implements B
+
+Implementing abstract methods:
+- For extended abstract class: we must implement all the methods which are abstract. We can leave non-abstract ones
+- For Implementing interface: we must implement all the methods. Also all methods inside interface are abstract. 
+
+
+VARIABLES INSIDE INTERFACE:
+- By Default all the variables inside the interface are FINAL & STATIC
+- to access the variables of an interface we need to access it by interface itself, because the class Implementing the interface 
+    will not be able to modify the values of variable( being final)
+
+Why Variables of Interface are final:
+
+1. Why are interface variables static?
+- Shared Across All Implementing Classes: Interface variables are meant to provide constants or configuration 
+    values that are shared by all implementing classes. They belong to the interface itself, not to any 
+    particular instance of a class implementing the interface.
+- Cannot Be Associated With Objects: Since interfaces do not represent objects (they define a contract), 
+    variables in interfaces are not tied to any specific instance. Making them static ensures they are 
+    accessed in a class-like manner (InterfaceName.VARIABLE_NAME).
+2. Why are interface variables final?
+- Immutable by Design: Interface variables are constants by design. They are meant to provide unchanging 
+    values (e.g., constants such as MAX_LIMIT or DEFAULT_PORT) rather than dynamic data.
+- No Override Allowed: Allowing modification would violate the principle of the interface as a blueprint that
+     defines behavior and does not manage state. The final keyword ensures the value cannot be changed.
