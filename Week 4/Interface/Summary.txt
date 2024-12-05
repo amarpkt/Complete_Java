@@ -47,3 +47,25 @@ Why Variables of Interface are final:
     values (e.g., constants such as MAX_LIMIT or DEFAULT_PORT) rather than dynamic data.
 - No Override Allowed: Allowing modification would violate the principle of the interface as a blueprint that
      defines behavior and does not manage state. The final keyword ensures the value cannot be changed.
+
+
+
+
+
+CAN we implement more then one interface to a class?
+Ans: YES
+Demo2.java
+
+
+Can an interface Inherit another interface
+Ans: Yes
+Demo3.java
+- here we can see that the interface A is inheritting interface C
+- and when class B implement only A, then also it has to implement function run to avoid error.
+
+
+
+Class --> Class : extends
+Class --> Interface : implements
+Interface --> Interface : extends
+

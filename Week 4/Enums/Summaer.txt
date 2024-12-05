@@ -1,0 +1,18 @@
+Enum: these are names constants.
+
+Example: if we ping a server then we get certain status code: 200, 400 etc
+
+So we cna create enums rather then creating objects 
+Demo.java
+enum Status{
+    Running, Failed, Pending, Success;
+}
+
+
+
+
+Enum If  and Switch:
+Demo2.java  --> If Else Demonstration and Switch Diff
+
+In Switch we don't have to mention Status.Running or Status.Failed
+Java know s means all cases are of Status type 
