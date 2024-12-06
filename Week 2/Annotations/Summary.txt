@@ -1,0 +1,26 @@
+Demo.java:
+
+- Here we can see that the two classes with same methods.
+- but when we try to call the method then it prints - "in A show" rather than "in B Show"
+- because of overriding nature we expect " In B Show" 
+Reason: See the name has some difference.
+
+Explanation: There are times when we have to use this much length names of methods to make it meaningfull. 
+there comes the chance of mistake which we did in Demo.java
+showTheDataWhichBelongsToThisClass
+AND
+showTheDataWhichBelongToThisClass
+looks similiar but thers is an s missing in the later one
+
+
+Solution: use Annotation:
+@Override : this Annotation is used to inform compiler that we're trying to override a method which is in parent class
+when we do so we will get an error here that the same method is not present in the parent class which can tell us in result
+to check the two method names.
+
+
+
+Annotation are used at :
+    - Class level
+    - method level
+    - variables level

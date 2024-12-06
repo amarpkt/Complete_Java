@@ -1,12 +1,15 @@
 Enum: these are names constants.
+- enum keyword in Java is used to define an enumeration, s special type that represents a fixed set of constants.
+- enums are useful when you need to work with a predefined list of values such as days of the week, directions, or state.
 
 Example: if we ping a server then we get certain status code: 200, 400 etc
-
 So we cna create enums rather then creating objects 
 Demo.java
 enum Status{
     Running, Failed, Pending, Success;
 }
+
+So here we mean that Status is the name of the enum or enumeration which holds various constans particularly metioned in braces.
 
 
 
@@ -16,3 +19,41 @@ Demo2.java  --> If Else Demonstration and Switch Diff
 
 In Switch we don't have to mention Status.Running or Status.Failed
 Java know s means all cases are of Status type 
+
+
+
+
+
+
+Enum Class:
+Can we extend enum class with any other clas? 
+Ans: No. not allowed
+- Apart from this inheritance not allowed, rest all is allowed
+- we can define methods in it, have constructors etc
+- also just like any other class enum also extend Object class that is why it can access toString(), hashCode() etc.
+
+enum Status{
+    Running, Failed, Pending, Success;
+}
+Status s = Status.Running;
+System.out.println(s.toString()); //Proof that Status extends Object class (toString() is a method of Object class)
+System.out.println(s.hashCode()); //Proof that Status extends Object class (hashCode() is a method of Object class)
+
+
+- It also Extends Enum class.
+enum Status{
+    Running, Failed, Pending, Success;
+}
+Status s = Status.Running;
+System.out.println("class name of s: " + s.getClass());   //Status
+System.out.println("Super class name of s: " + s.getClass().getSuperclass()); //Enum
+
+- Here we can see s which is an object of Status class, gives the name Status when we try to print class of S
+- ans the super class is Enum
+
+
+
+
+Enum Constructor Demo: 
+Demo4.java:
+
