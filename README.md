@@ -22,7 +22,7 @@ Week 3: 07th November 2024 - 14th November 2024 ==> 8 Days
     - Packages
     - Access modifiers
 
-Week 4: 15th November 2024 - ##th November 2024 ==> ? Days
+Week 4: 15th November 2024 - 06th December 2024 ==> 22 Days
     - Polymorphism
     - Final Keyword
     - Object class equals toString hashcode
@@ -34,6 +34,20 @@ Week 4: 15th November 2024 - ##th November 2024 ==> ? Days
     - Enum, Enum If & Switch
     - Annotation    
 
+Week 5 : 06th December 2024 - ##th December 2024 ==> ? Days
+    - Types of Interfaces, Fucntional Interfaces
+    - Lambda Expression
+    - Exception & Exception handling with try catch block
+    - Exception Hierarchy
+    - Throw and Throws Keyword
+    - Custom Exception
+    - User Input using Bufferedreader
+    - Multiple Threading
+    - Collection API: ArrayList, Set, Map
+    - Comparable vs Comparator
+    - Generics in Java, Syntax and usage, Wildcard type, Upper and lower bounds in Generics
+
+Week 6
 
 
 

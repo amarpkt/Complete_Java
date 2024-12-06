@@ -1,0 +1,37 @@
+Week 5 Topics
+- Types of Intrefaces (Functinal Interfaces)
+- Exception Handling
+- Threads
+- Collection API
+
+
+Detailed Topics:
+- Fucntional Interfaces
+- Lambda Expression
+- Lambda Expression with return
+- Types of Interfaces
+- What is Exception
+- Exception handling with try catch block
+- Try with multiple catch
+- Exception Hierarchy
+- Exception Throw Keyword
+- Custom Exception
+- Ducking Exception using throws
+- User input using Bufferedreader
+- try with resources
+- Threads
+- Multiple Threads
+- Thread Priority and sleep
+- Runnable vs Thread
+- Race Condition
+- Thread States
+- Collection API
+- ArrayList
+- Set
+- Map
+- Comparable vs Comparator
+- Need of Generics in Java
+- Syntax and usage of Generics
+- creating and Working with Generics class
+- Using Wildcard type in Generics
+- Upper and lower bounds in Generics
