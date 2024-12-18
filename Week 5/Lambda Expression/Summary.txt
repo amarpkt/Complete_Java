@@ -1,0 +1,50 @@
+Lambda Expression: Only applicable with the Functinal interface
+
+
+ A obj = () -> System.out.println("In A Show");
+
+ is Equivalent to:
+
+ A obj = new A(){
+            public void show(){
+                System.out.println("In A Show");
+            }
+        };
+
+Why this syntax: Because we're working with Functinal interface so we have removed first the class which implements the interface A
+- now when we use Anonymous inner class then, we've seen how we don't need class B which implements interface A
+- now for FI, we know every time we do this lower syntax use, it's gonna remain same because ther is only one method, show() in 
+the interface A, so why to write this. JVM will do the job for us: 
+
+A obj = new A(){
+            public void show(){
+                System.out.println("In A Show");
+            }
+        };
+
+A obj = () -> {
+                System.out.println("In A Show");
+            }
+        ;
+
+ A obj = () -> 
+                System.out.println("In A Show");
+        ;
+
+ A obj = () -> System.out.println("In A Show");
+
+Demo.java: Syntax of Functinal interface and Anonymous Inner class
+Demo2.java: Syntax of Lambda Expression
+
+Demo3.java:  Passing values in Lambda Expression
+we can use this: 
+ A obj = (i) -> System.out.println("In A Show " + i );
+as well as this: i.e. no need to use brackets also for a single variable
+ A obj = i -> System.out.println("In A Show " + i );
+
+
+
+Lambda Expression with Return:
+Demo4.java: Basic method to implement
+Demo5. java: With Lambda Expression
+no need to write return keyword if only one statement is there in code

@@ -1,0 +1,45 @@
+Functinal Interface : Interface with only one method.
+FI: SAM interface(Single Abstract Method)
+
+
+When we declare a Functinal interface we can use the annotation @FunctinalInterface
+- if we don't mention the annotation and our intention was to make the interface as Functinal interface then the motive will not be acheived, as if someone tries to add another method in interface then JVM won't throw any error. 
+- So better to write the annotation of @FunctinalInterface, after which if you try to add a new method then JVM will throw the error
+
+Demo.java:
+    - here we can see how to declare an interface A and implement it in the Class B
+    - Now we will try to reduce the LOC (lines of code) using concept of some Anonymous Inner class and Lambda Expression
+
+Demo2.java:
+    - Here we saw that interface A is being implented only once at Class B.
+    - Use of class B is only to implement the interface A and that's it.
+    - So here comes the use of a feature - Anonymous Inner class.
+    - we will not create the object of the Class B as it's no longer existing.
+    - We have simply tried to create the object of Interface (not actually an object though) and have implemented the method there only.
+    - How we're able to do that: With the help of Anonymous Inner class.
+    - In actual, when we write : A obj = new A(){}; here inside the curly braces there is a class which has no name so called 
+        Anonymous class and it's inside a second class so inner class, thus the name, Anonymous Inner class.
+    - so when we write A obj = new A(){}; then we're trying to implement actually the object of Anonymous class.
+
+A obj = new A(){
+    public void show(){
+        System.out.Println("In A Show);
+    }
+};
+obj.show();
+
+
+is equivalent to :
+    @FunctionalInterface
+    interface A{
+        void show();
+    }
+
+    class B implements  A{
+        public void show(){
+            System.out.println("In A Show");
+        }
+    }
+
+    B obj = new B();
+    obj.show();
