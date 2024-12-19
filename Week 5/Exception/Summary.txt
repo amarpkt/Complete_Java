@@ -1,0 +1,55 @@
+Errors: 
+    1 .Compile time Errors
+    2. Run-time Errors
+    3. Logical Errors
+
+
+
+Compile time Errors: when you do some typing mistake like 
+System.Out.Println(); 
+- here though your IDE will show you the warning but also your compiler will throw the error with note
+- that this is a compilation error because of issue at line number xyz
+- these compile time error are easy to resolve.
+
+
+Logical Errors:
+- when some logical erros like 2+2 = 5
+- not easy to debug
+- too much testing is required
+
+
+Runtime Errors:
+- when it comes the execution stops at a particular line
+- your program will not execute the remaing line of code
+- this is called as Exception
+- we need to handle these exception at runtime so that execution may not stop
+Example: we have a application where we need to divide a number say 50 by a numeric value, can be 2,3,4 etc
+- so we need to check if it shall not get divided by zero because that can not be handled by out compiler.
+
+public class Demo{
+    public static void main(String[] args) {
+        System.out.println("begin");
+        System.out.println(4/0);
+    }
+}
+
+Output: begin
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+	at Demo.main(Demo.java:4
+    
+    
+So this type of exceptino shall be handled
+
+
+Another example: When you're checking the content of a file we can apply a check if the file is not null
+
+Statements: 2 Types
+1. Normal Statements
+2. Critical Statements
+
+int i = 3; --> Normal Statement
+int j = 18/i; --> Critical Statement
+Why? because of i == 0 then ArithmeticException
+
+this type of exceptino can be handled by try catch 
+

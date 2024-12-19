@@ -1,0 +1,29 @@
+Types of interface:
+- Normal interface
+- Functional interface (SAM interface)
+- Marker Interface
+
+
+- Functional interface is also called as SAM i.e Single abstract Method interface.
+- Marker interface is a blank interface with no methods in it.
+
+- All the methods in the interface are PUBLIC and ABSTRACT
+
+
+Marker Interface: this is mainly to update to compiler about something.
+Example: Seriliazation 
+            - in this you can take the object and store the value of the object in the Harddrive. But How?
+            - so in scenarios when we need to destroy the object then we can transfer the values of the object in the HD 
+            - later when required with the same values stored in the Harddrive, we can recreate the object.
+            - Example: Games data in phone.
+Transferring the values from object to Harddrive --> Seriliazation
+Transferring the values from Harddrive to object --> De-Seriliazation
+
+
+by Default, every object is not allowed to do so, you can do the permission with the help of Marker Interface
+
+
+Marker Interface - No Method
+Functional Interface - One Method
+Normal Interface - Multiple Method
+

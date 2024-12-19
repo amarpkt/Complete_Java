@@ -1,0 +1,15 @@
+In try catch block, the moment you it throws the error to you frmo try block, 
+the exception will be thrown in form of object, 
+and you need to cathch that object - we can use catch block for this.
+we use Exception class to refer to that object of exception thrown by try block.
+
+    Exception e 
+    Exception = class 
+    e = object 
+
+Example: 
+ try {
+            j = 18/i;    
+    } catch (Exception e) {
+        
+        }
