@@ -1,0 +1,54 @@
+Demo.java: 
+Output is :
+Something went wrong java.lang.ArithmeticException: / by zero
+
+
+Now lets say if we have multiple lines of code and more than one line posses error. 
+Means if there are 2 lines of code, line 1 and 2 both are about to throw error, then how to handle this,
+because if line 1 didn't threw error then line 2 will execute, but if line 1 throws the error then JVM will jump out of try block.
+and the execution will go to Catch block, without executing the second line of code.
+
+Demo2.java:
+Now in this version of code we can see that there is potential error in both line 1 and 2 of try block.
+
+
+        try {
+            j = 18/i;
+            System.out.println(num[5]);    
+        } 
+Line 1: Potential error of Arithmatic exception as 18 cannot be divided by zero.
+Line 2: Index out of bound exception as there is only 5 indexes in nums[] array and we're trying to 
+print index 6 which is nums[5]
+
+so line 1 will threw exception & line 2 will not even gets opportunity to be executed by JVM:
+
+lets run the code:
+if i = 0 : 
+o/p: Something went wrong java.lang.ArithmeticException: / by zero
+value of j = 0
+explanation: we can not divide 18 by zero 
+also the line 2 didn't got chance for execution
+
+if i = 1:
+o/p: Something went wrong java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5
+value of j = 18
+explanation: we get the output of line 1 as j = 0  
+but got exception at line 2 
+
+1. Now we need a solution where doesn't matter weather there is exception at line 1 or not, it should execute the line 2
+2. Also we saw the output starts with same error description: Something went wrong for both the exception at line 1 and 2
+    - we need to have a different description for each line of exception, to make it more meaningful.
+
+example: if we can say - we can not divide the number i
+                       - we can not access index i in an array of size i 
+so these are like user specific exception description, which is more meaningful.
+
+Solution: Demo3.java:
+- Here we can see that the error message is displayed according to the exception raised.
+
+Advantage of Try with multiple catch blocks:
+- we will get the exception for every line of code if we sense it could lead to an exception.
+- we get all the lines executed regardless line above it has faced an exception
+
+In the end we must add Exception class to handled any left out exception, if any.
+Exception is the parent class and all other are child classes.

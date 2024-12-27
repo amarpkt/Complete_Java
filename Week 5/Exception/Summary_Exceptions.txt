@@ -1,0 +1,78 @@
+Exception class is a part of java.lang package and serves as the base class for all exceptions. 
+It has two main cateogaries of subclass:
+    1. Checked Exception: These are exceptions that are checked at compile time, means the compiler requires the code to handle
+        them explicitly.
+    2. UnChecked Exception: These are exceptions that are not checked at compile time. They are usually the result of Programming 
+        errors and extend the "RuntimeExceptions" class 
+
+
+Common Subclasses of Exception
+    Checked Exceptions
+        1. IOException:
+            . Examples: FileNotFoundException, EOFException.
+            . Occurs when an input-output operation fails.
+        
+        2. SQLException
+            . Occurs when a database access operation fails.
+
+        3. ClassNotFoundException
+            . Thrown when a class cannot be found.
+
+        4. InvocationTargetException
+            . Used in reflection to wrap an exception thrown by an invoked method or constructor.
+        
+        5. InterruptedException
+            . Occurs when a thread is interrupted while waiting, sleeping, or otherwise paused.
+
+        6. CloneNotSupportedException
+            . Thrown when attempting to clone an object that does not support the Cloneable interface.
+    Unchecked Exceptions (Subclasses of RuntimeException)
+        1. NullPointerException
+            . Occurs when attempting to use an object reference that is null.
+        
+        2. ArrayIndexOutOfBoundsException
+            . Occurs when trying to access an array element with an invalid index.
+        
+        3. ArithmeticException
+            . Occurs when an arithmetic operation goes wrong, such as division by zero.
+
+        4. IllegalArgumentException
+            . Thrown when a method is passed an invalid or inappropriate argument.
+
+        5. IllegalStateException
+            . Indicates that a method has been invoked at an inappropriate time.
+        
+        6. ClassCastException
+            . Occurs when trying to cast an object to a subclass it does not belong to.
+
+        7. NumberFormatException
+            . Thrown when trying to convert a string to a numeric type and the string is not properly formatted.
+
+        8. IndexOutOfBoundsException
+            . Parent class for ArrayIndexOutOfBoundsException and StringIndexOutOfBoundsException.
+
+
+    Error Classes (For Comparison)
+    --> Errors extend the Error class, not the Exception class. Examples include:
+        . StackOverflowError
+        . OutOfMemoryError
+        . AssertionError
+
+
+    Hierarchical View
+            Throwable
+            |── Error
+            └── Exception
+                ├── IOException (Checked)
+                ├── SQLException (Checked)
+                ├── ClassNotFoundException (Checked)
+                ├── InterruptedException (Checked)
+                ├── CloneNotSupportedException (Checked)
+                ├── RuntimeException (Unchecked)
+                │   ├── NullPointerException
+                │   ├── ArrayIndexOutOfBoundsException
+                │   ├── ArithmeticException
+                │   ├── IllegalArgumentException
+                │   ├── IllegalStateException
+                │   └── NumberFormatException
+                |

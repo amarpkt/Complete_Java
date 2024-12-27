@@ -1,7 +1,7 @@
 # Complete_Java
 Here I'm trying to push certain handout related to my Java Learning
 
-Week 0 and 2: 27th October 2024 - 07th November 2024 ==> 14 Days
+# Week 0 and 2: 27th October 2024 - 07th November 2024 ==> 14 Days
     - Git and GitHub
     - JDK/JRE/JVM
     - Stack and Heap Memory
@@ -10,7 +10,7 @@ Week 0 and 2: 27th October 2024 - 07th November 2024 ==> 14 Days
     - String, Mutability and immutability, String Buffer and Loader, String Constant Pool
 
 
-Week 3: 07th November 2024 - 14th November 2024 ==> 8 Days
+# Week 3: 07th November 2024 - 14th November 2024 ==> 8 Days
     - Static Vatiable, Static block, Static Method
     - Encapsulation
     - Getters & Setters
@@ -22,7 +22,7 @@ Week 3: 07th November 2024 - 14th November 2024 ==> 8 Days
     - Packages
     - Access modifiers
 
-Week 4: 15th November 2024 - 06th December 2024 ==> 22 Days
+# Week 4: 15th November 2024 - 06th December 2024 ==> 22 Days
     - Polymorphism
     - Final Keyword
     - Object class equals toString hashcode
@@ -34,7 +34,7 @@ Week 4: 15th November 2024 - 06th December 2024 ==> 22 Days
     - Enum, Enum If & Switch
     - Annotation    
 
-Week 5 : 06th December 2024 - ##th December 2024 ==> ? Days (actually started on 18th December 2024 because of SPAYG Project initiliazation)
+# Week 5: 06th December 2024 - ##th December 2024 ==> ? Days (actually started on 18th December 2024 because of SPAYG Project initiliazation)
     - Types of Interfaces, Fucntional Interfaces
     - Lambda Expression
     - Exception & Exception handling with try catch block
@@ -47,7 +47,7 @@ Week 5 : 06th December 2024 - ##th December 2024 ==> ? Days (actually started on
     - Comparable vs Comparator
     - Generics in Java, Syntax and usage, Wildcard type, Upper and lower bounds in Generics
 
-Week 6
+# Week 6
 
 
 
