@@ -1,0 +1,31 @@
+If the repo needs to be pushed from a new system then use below steps:
+- example: in case you re install the windows in your laptop then we need to install all again
+- like git 
+- VS code
+- Eclispe 
+
+
+so in similiar ways we need to perform below steps to again start pushing the code from same laptop.
+
+- Install Git form git-scm.com
+	> check version
+	> git --version
+- use cmd or VS code to initialize your machine
+	> check if it already exisits:
+	> git config --global --list
+	> if nothing pops up then use below command to set this up:
+	> git config --global user.name "Amar Pathak"
+	> git config --global user.email "amarpathak723@gmail.com"
+	> again check with same command if this has been setup properly:
+		git config --global --list
+- now need to generate ssh key so that same system does not ask for password for repeatedly pushed code:
+	> ssh-keygen -t rsa -b 4096 -C "amarpathak723@gmail.com"
+	> this will generate a ssh key in your local system in folder : C: user>amarp> .ssh folder
+	> go to the the respective folder using the cmd or VS Code and then cat the id_rsa.pub file into your clipboard
+	
+- now go to github and add this SSH key to your account: 
+githb > setting > ssh keys > add > name your title and paste the key there
+
+- after pasting go to your local system and clone the project:
+	> git clone git@github.com:amarpkt/Complete_Java.git
+You're done.
