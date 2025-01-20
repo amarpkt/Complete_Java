@@ -1,0 +1,53 @@
+
+                        Object
+                          |
+                       Throwable
+                          |
+              ──────────────────────────
+              |                        |
+            Error                   Exceptions
+        (Can not be handled)     (can be handled) 
+    - Thread dies               - checked Exceptions
+    - IO Error                  - unchecked Exception (Runtime Exceptions)
+    - Virtual Machine Error
+    - Out of Memory Error
+
+
+
+Error Classes (For Comparison)
+    --> Errors extend the Error class, not the Exception class. Examples include:
+        . StackOverflowError
+        . OutOfMemoryError
+        . AssertionError
+
+
+    Hierarchical View
+            Throwable
+            |── Error
+            └── Exception
+                ├── IOException (Checked)
+                ├── SQLException (Checked)
+                ├── ClassNotFoundException (Checked)
+                ├── InterruptedException (Checked)
+                ├── CloneNotSupportedException (Checked)
+                ├── RuntimeException (Unchecked)
+                │   ├── NullPointerException
+                │   ├── ArrayIndexOutOfBoundsException
+                │   ├── ArithmeticException
+                │   ├── IllegalArgumentException
+                │   ├── IllegalStateException
+                │   └── NumberFormatException                
+
+
+--> All unchecked exceptions in Java fall under the Runtime Exception Cateogary
+- unchecked exceptions are exceptions that do not need to be explicitly caught or declared in the method signature using throws.
+- they typically represent programming bugs or unexpected conditions that the programmer can avoid or prevent:
+    > Runtime Exception is the base class for all unchecked exceptions
+    > Other unchecked exceptions, like NullPointerException, ArrayIndexOutOfBoundsException, and ArithmeticException are subclasses of Runtime Exception.
+
+- Checked Exception: that must be either caught or declared in the method signature (IOException, SQLException etc)
+- Unchecked Exception: that are subclasses of RuntimeException which are not required to be caught or declared (NullPointerException, ArithmeticException)
+
+
+NOTE: When your compiler sees a line which it perceievs a potential threat then the the comppiler will force you to handle it, these are checked exceptions.
+but if there is a potential unchecked exception then the compiler won't force you to handle it.
