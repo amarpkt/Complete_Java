@@ -1,0 +1,29 @@
+Demo.java:
+- Here we are trying to print the value of j = 18/i when i is 20. Definetely the quotient is 0 so it will print 0.
+- when we will divide same 18 by zero like when i = 0 not 20, then it will throw the Arithmatic Exception.
+
+O/P: Cannot Divide by Zero java.lang.ArithmeticException: / by zero
+     0
+
+what if we don't want to print zero: Demo2.java:
+- So here we have added a logic that when we divide 18 by zero then it will go to Arithmatic Exception block and there we will put a default value of java
+- this will be done by j = 18/1 i.e. j = 18
+- this way whenever 18 is divided by 0 it will put a default value i.e. 18 as value of J.
+
+
+USE CASE: when we have a Primary DB and a secodary DB. 
+- If Primary one fails then we will not throw any error to user, rather we will try to connect to Secondary DB
+- this will be done by using same logic which we saw in Demo2.java
+ 
+
+- Again lets try to divide the number 18 by 20 in Demo2.java
+- here again the value of j = 0 as 18/20 = 0
+- so here we don't want to print the value 0, rather we want to throw the exception.
+
+Demo3.java: 
+- Here we can check first if the value of j is 0 then throw the exception expicitly
+- Why we wan't to do this: Because JVM won't throw any Arithmatic Exception when j = 0 so we will do it expicitly
+
+- We can not call directly ant catch block, either JVM will do this or we will call it using throw keyword.
+
+- Also if you want to print any message then we can use the constructor - Demo4.java
