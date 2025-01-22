@@ -35,8 +35,8 @@ Here I'm trying to push certain handout related to my Java Learning
     - Annotation    
 
 # Week 5: 06th December 2024 - ##th December 2024 ==> ? Days 
-> First break : 06th Dec to 18th Dec: Because of SPAYG Project initiliazation
-> Second break: 27th Dec t0 20th Jan: SPAYG Go Live date was 19th January 2025
+> First break : 06th Dec to 18th Dec: Because of SPAYG Project initiliazation.
+> Second break: 27th Dec t0 20th Jan: SPAYG Go Live date was 19th January 2025.
     - Types of Interfaces, Fucntional Interfaces
     - Lambda Expression
     - Exception & Exception handling with try catch block
