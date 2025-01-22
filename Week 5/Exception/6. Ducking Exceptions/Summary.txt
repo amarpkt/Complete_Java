@@ -1,0 +1,126 @@
+Scenario: 
+we've two methods d() and e():  
+d(){
+    ------
+    ------
+    try-catch()
+}
+
+e(){
+    ---------
+    ---------
+    try-catch()
+}
+
+- these both methods have some critical statements which may throw errors so needs to be handled with the help of the try catch block.  
+- also these 2 methods have same type of exceptions.  
+- so we came up with an idea to write these two exceptions in a single different methods say c and handle the exceptions of d() and e() together.  
+
+
+        c(){
+            ------------
+            ------------
+            d(){
+                ---------
+                ---------
+                try-catch()
+            }
+            e(){
+                ----------
+                ----------
+                try-catch()
+            }
+            --------------
+            --------------
+            try-catch()
+        }
+
+- here we need to handle the exceptions of the two at same time.  
+- means we don't need to write the try-catch block individually inside the two rather we can do it with the single try-catch of the methos c().  
+- means we can remove the try-catch from d() & e() and handle it with c() only.
+
+
+  c(){
+            ------------
+            ------------
+            try{
+                 d(){
+                    ---------
+                    ---------
+                }
+                e(){
+                    ----------
+                    ----------
+                }
+            }
+            catch(){
+
+            }
+        }
+
+
+- In actual we're writing these methods d() and e() seperately, but only calling them inside another method c().  
+- In individually writing these two methods d() and e() we need to make sure that we duck the exceptions using throws keyword:
+
+Initial condition was:  
+    d(){
+        ------
+        ------
+        try{
+            -------
+            -------
+        }catch(){
+            -----
+        }
+    }
+
+     e(){
+        ------
+        ------
+        try{
+            -------
+            -------
+        }catch(){
+            -----
+        }
+    }
+
+
+Now with the help of ducking exceptions: 
+d() throws XYZ Exception{
+    -------
+    -------
+    -------
+    -------
+}
+
+e() throws XYZ Exception{
+    -------
+    -------
+    -------
+    -------
+}
+
+c(){
+    ----------
+    ----------
+    try{
+        d();
+        e();
+    }catch(){
+        ------
+        ------
+    }
+}
+
+NOTE: SO whosoever is calling the merhods d() and e(), it's there responsibility to handle the exceptios whatsoever is being thrown by the two methods.  
+- So here the method c()'s responsibility is to handle the exceptions thrown in d() and e().  
+
+- One thing to note here is that we shall ask the parent class in any order to handle the exceptions, but the ladder shall not reach to Main() method.  
+- Method main() will stop execution as JVM will not do this because main() method is executed by JVM  
+- NEVER DO THIS:  
+    public static void main() throws ClassNotFoundException{
+
+    }
+- NEVER DO THIS  
+- See the class Demo3.java for illustration.

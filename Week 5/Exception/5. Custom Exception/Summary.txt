@@ -1,0 +1,43 @@
+Demo.java :
+- first we wrote or replaced new ArithmaticException by a new Exception name which is "NaveenException".   
+- with this we intend to call the NaveenException in place of ArithmaticException.  
+          try {
+            j = 18/i;
+            if(j == 0){
+                throw new NaveenException("I Don't want to print zero");
+            }
+        }  
+
+
+- but this alone won't do the job as this is expecting a new Exception class which is NaveenException. 
+- So let's make a new class: 
+
+        class NaveenException{
+
+        }  
+
+- but again is not suffice as the error is expecting a constructor with a string value in try block (See above):   throw new NaveenException("I Don't want to print zero");  
+- so we will add a constructor:  
+
+             class NaveenException{
+                public NaveenException(){
+
+                }
+            }   
+
+- now again this is not suffice as we need to make this class a replica of an actual Exception class or we can do so by extending the properties of an Exception class.  
+- this can be done by extending throwable class because EITHER YOU CAN BUILD SOMETHING FROM SCTRACH OR INHERIT FROM PARENTS.  
+- So here we're inherriting the thing from parent class  
+
+          class NaveenException extends Throwable{
+                public NaveenException(){
+
+                }
+            }   
+
+- also in the end you need to add a ctach block with which handles the throw kwyword of NaveenException.
+        catch (NaveenException e){
+            j = 18/1;
+            sysout()
+        }            
+
