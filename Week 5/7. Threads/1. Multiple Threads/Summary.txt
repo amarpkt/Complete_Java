@@ -1,0 +1,20 @@
+Demo.java: 
+- here we can see that all the Hi printed for 10 times and then Hello for 10 times.
+- What I wan to achieve is multuthreading, hi then hello then hi then hello consecutively.
+- this is what we called multuthreading.
+
+Demo2.java:
+- When we extend the normal class A and B by Thread then this will not be a normal class, it will be a Thread.
+- but this is not all which do the job to achieve multuthreading.
+- we need two threads and to start a thread it requires a Start() method to call.
+
+steps: 
+1. make classed extend Thread class.
+2. change the name from show to start() in class A and B
+3. In main method rather than calling show() or start(), call run()
+
+- Thats all we need, and for visibility repeat the loop for 100 times rather than 10 as system is too fast that it will print all 10 at a time
+- and will feel like it's not a multithreading but in actual it is. 
+- so when we iterate 1000 times that for first 8-15 time it will print Hi, then 8-15 times Hello. 
+- we've achieved the multithreading this way.
+- 3 things: extends class by Thread to make it behave like Thead, change method name by start(), call run() method.

@@ -1,0 +1,40 @@
+Threads: 
+- there is a scheduler which assigns the CPU to execute the threads in parellel
+- we can not control the scheduler, we can only suggest to give priority to a specific thread.
+
+
+Priority of a thread ranges from 1 to 10: 
+01 - least priority 
+10 - max priority
+05 - default Priority
+
+to find priority sysout - obj1.getPriority();  and obj2.getPriority();
+to set the priority     - obj1.serPriority(4); and obj2.setPriority(4);
+
+set can be done by Constants as well: obj.setPriority((Thread.MAX_PRIORITY)
+
+- but still you won't be able to see much differenc as the processing of the CPU is too high that in that fraction of milliseconnds, you get all the 
+hello or hi printed of which you've set the High Priority
+
+- Solution : SLEEP
+Thread.sleep(10); it will allow the thread to sleep for 10 milliseconds.
+Demo2.Java: 
+here also we can see even after applying 10 ms delay or sleep we are observing two hi or two hello printed.
+Explanation: when it prints Hi. then scheduler has two options to print  -Hi or hello
+- if at this time it allows Hi more priority then Hi will be printed 
+- this looks like Hi has been printed two times but not Hi was printed and scheduler didn't got to know that the last time Hi was printed.
+
+NOTE: As a programmer we can optimize the working of thread by : 
+    - Changing the priority 
+    - applying Sleep time post each thread run
+BUT we can not control the thread.
+Example: 
+            obj1.start();
+            try {
+                    Thread.sleep(2);
+                } catch ( InterruptedException e) {e.printStackTrace();
+            }
+            obj2.start();
+- This way the thread will see a sleep of 2 milliseconds after each thread run and we can see the Hi & Hello printed consecutively,
+- So these are the some ways we can use to optimize the thread workign but we can actually not control the working of threads.
+        
