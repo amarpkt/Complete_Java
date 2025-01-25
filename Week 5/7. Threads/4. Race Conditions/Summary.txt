@@ -1,0 +1,43 @@
+RACE CONDITION: When two threads access same method at a same time, and it leads to inconsistent results. 
+
+Example:
+- We've two ATM cards with one bank accounts and two users having ATM access are trying to withdraw the money at same time.
+- This is similiar to condition where two threads are trying to update the value of a variable at a same time. 
+- So Threads and Mutation together is  not a good idea.
+- so whenever we're working with Threads we need to make sure that we shall work with the data which are immutable.
+
+Thread Safe:  Means only one Thread can work at a time.
+Ex: t1 and t2 both are working on a method show() so at a time only one thread can access show() method.
+
+
+Demo.java:
+First lets take a template code where we're gonna use the multithreading and learn what is Race condition.
+- So this is a kind of template where we can see we've initialized two threads t1 and t2 with Lambda Expression in place.
+- No need to write the class A and B seperately. We know we're gonna write only one method in them which in run(), so why to write a seperate class.
+- we can simply think of it to be used in Runnable interface and inside that we have used the concept of anonymous inner class (say A and B)
+
+
+
+Demo2.java:
+- we're adding a new method increment() declared to be in a new class Counter.
+- so whenever someone calls this method increment(), there will be a counter incresed by one.
+- we'll try to call this method at a same time with threads.
+
+- here in Demo2.java we've used the increment method to increase the count by one every time.
+- when we run the program then the result came very inconsistent, 
+- we thought it to be 2000 as a result but it came 1700, 1600 like this. (maybe zero also)
+- if the result is zero then the reason behind this is that when the JVM hits t1.start() and t2.start() then the machine did the job and jumped to sysout c.count();
+- means the machine was fast enough to jump to find the value of count at that time which is still zero. 
+- this is because the two threads didn't got enough time to finish the execution and the value of count remain 0. 
+- to avoid this situation we can use join() method to work on this.
+- t1.join() and t2.join() will work in a way that the main() method  will wait to t1.thread and t2.thread to finish there execution and then print the valuee of count.
+
+- but the problem is that even with this the value is not 2000, it's always like 1600, 1700 like this.
+
+- this is because of RACE CONDITION.
+- at a time two threads worked on increment() method and this resulted that at a same time both got a number onto which both incremented plus 1 at a same time.
+
+
+QUESTION: How to make sure that at a time only one thread works at one time.
+Ans: with the use of a keyword - SYNCHRONIZED, we can make sure that if at a time t1 is working on increment() the t2 is not and vice versa. 
+Demo3.java: Here with use of this keyword we can see that the value is now coming always 2000.

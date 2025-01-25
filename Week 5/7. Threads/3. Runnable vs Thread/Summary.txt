@@ -1,0 +1,54 @@
+What we're trying to achieve here is that we want to make sure we can free the class A and B to inherit some other class as well apart from Thread class.
+We've seen that for multithreading we need to extend Thread class in order to make it a Thread.
+Requirement: what if we need to have one more class extended by out Thread class. 
+ex: 
+ Class A extends Thread, xyz {
+
+    }
+
+- This is not allowed in Java - Multiple Inheritance
+- means Extending the Thread class is not a good idea.
+
+- we can see that Thread class implements Runnable Interface.
+- so we will convert the class A extends Thread to Class A implements Runnable
+- so that if required we can have another class extended by Class A and by
+NOTE: Also we can see inside the interface Runnable that there is only one method which in run() 
+- and that is why we used run() method inside the class A and B in Demo.java 
+
+- Now the problem is that we're implementing Runnable interface but the start() method is a part of Thread class.
+- How can we use the start() method without extending Thread class. As this is required in order to start the thread.
+
+- Now we need to make certain changes inside the main() method.
+- we can create objects of Thread class and with that object we can use start() method.
+    Thread t1 = new Thread();
+    Thread t2 = new Thread();
+- now with this t1 and t2 we will try to call start() method rather than using obj objects
+    obj1.start() --> t1.start();
+    obj2.start() --> t2.start();
+
+- but this won't work :  because when we open Thread class method  with constructor then we can see that it is expecting the object reference (not actual object) of Runnable class:
+     public Thread(Runnable task) {
+        this(null, null, 0, task, 0, null);
+    }
+- now we will change our Thread object creation with constructor type as well and for argument we will use the obj1 and obj2 with type as Runnable.
+- See Demo2.java for reference
+- All we need are now:
+    1. Replace Extends Thread class by implements Runnable Interface for class A and B.
+    2. In main() method replace object creation by class name to Interface Name. 
+        A obj1 = new A();  --> Runnable A = new A();
+        B obj2 = new B();  --> Runnable B = new B();
+    3. Create two Thread objects with obj1 and obj2 as Arguments.
+        Thread t1 = new Thread(obj1);
+        Thread t2 = new Thread(obj2);
+    4. Replace obj1,obj2 by t1, t2 to start thread:
+        obj1.start(); --> t1.start();
+        obj2.start(); --> t2.start();  
+
+
+
+
+Optimization: Lambda Expression
+Demo3.java - here we've simply added the Interface object which is not allowed so we have taken the use of anonymous inner class.
+- we know Runnable is a functional interface as it has only one method which is run();
+- so we will use this functional interface and anonymous Inner class concept and use this both into Lambde expression.
+Demo4.java:
