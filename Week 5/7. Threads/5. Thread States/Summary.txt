@@ -1,0 +1,6 @@
+Thread has multiple states:
+- New 
+- Runnable
+- Running
+- Waiting
+- Dead
