@@ -1,0 +1,36 @@
+ArrayList: this is a class that implements the List Interface. 
+List is a child interface of Collection Interface.
+
+Demo.java: 
+- Here we can see that we have taken ArrayList class declared with the help of Collection Interface.
+- we can not create the object of an interface.
+- Now,  we can see that there is output although we've got the warning at every line.
+
+- Also we can not use index value to print as collection interface do not allow this.
+    Collection col = new ArrayList();
+    col.add(4);
+    col.get(0); --> not allowed with collection. 
+
+- If we would have used ArrayList Directly then we can :
+    ArrayList  col = new ArrayList();
+    col.add(4);
+    col.get(0); --> Now it's allowed
+
+Problem: What is the datatype of the values which we're trying to print.
+    nums.add(4);  --> what type is 4 ??
+- where we've declared that the value 4 is an Integer type.
+
+This is why if you will try to print the values using FOR loop then you'll not be able to do so when we try fetch the values as integer.
+but when we try to fetch it as object then we can do so.
+Reason: every class extends the object class including integer, float, double
+So here these integer values 5,6,7,8 are also having there parent class as object class.
+That is why when we treat it as object then there is no error but with int there is error.
+type object does not need to be defined but integer needs to be defined.
+
+
+Solution: Generics
+Demo2.java:In the definetion line we've used angualr braces to declare the type:
+        
+        Collection<Integer> nums = new ArrayList<Integer>();
+- this way we can define that in this particular data structure (ArrayList in this case), all tha values being stored shall be treated as Integer.
+- Generics does not work with primitive data type thats why we can not use int, so need to use Integer (Wrapper class for int data type)
