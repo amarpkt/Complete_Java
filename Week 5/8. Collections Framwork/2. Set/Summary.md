@@ -9,13 +9,11 @@ __SET__:
 - Does not follow the sequence of data stored.
 - Gives random values
 
-- There are two implementation of __Set interface__ :  __HashSet__ and __LinkedHashSet__
-- also ther is one more interface which extends Set interface, which is __SortedSet__
+- There are two implementation of __Set__ interface :  __HashSet__ and __LinkedHashSet__
+- also there is one more interface which extends Set interface, which is __SortedSet__
 - the class which implements SortedSet is __TreeSet__
 - TreeSet gives the feature of sorted values.
 Demo3.java : TreeSet
-
-
 
 
 __Iterator__: Collection Interface extends another interface which is __Iterable__ interface

@@ -1,0 +1,44 @@
+Map is not a direct interface which falls under the collection interface but it's an important element to be discussed in Collection Framework.
+
+Requirement: when we have a data which needs to be stored in form of key-value pair, then we can use Map.
+So Map is a collection of a Key and a value.
+
+    Syntax: Map<Key,Value> objectName = new HashMap<>(); 
+
+Demo.java: H
+- Here we can see that how Map is used.
+- we've used HashMap class to implement Map.
+- We don't have ADD() method here to add the elements rather we can use PUT() method.
+WHY? : beacuase Map says ADD() the element in Map but if alread exist then replace it by this , so use PUT() (Map does not support duplicate entries)
+- In Map also the sequence is not maintained. The result is printed in random manner.
+- If two values are added with same key name then the later one will be counted as in the output.
+- here also we can print all element (Key-value pair) with the help of simply using object of Map. 
+- In order to print a single value we can use GET() method with key name in it.
+
+Demo2.java: 
+- here we can see that if by mistake a value needs to be changes then we can do so by simply addding the value with same key name.
+- here we can see that the key value pair with key name as "Kiran" is repeated (for correction maybe) and the value 65 is the one which we can see in final result.
+- Although in start it was 95 but 65 is the one which is correct now.
+
+NOTE: keys can not be repeated.
+or we can say that key are actually a SET
+and Values can be repeated so it can be a LIST.
+
+NOTE: MEANS MAP IS ACTUALLY A KEY-VALUE PAIR OF SET & LIST
+- This can be tested in the Demo2.java using - students.keySet() : this will give the set of keys 
+- why name set of keys: because set supports feature of unique values so as KEY in Map Data structure. 
+- Also if we want to print all the values then we can use : 
+
+Demo3.java: Lets try to print all key-value pair one by one using a for loop: 
+- we know how to fetch all the keys - using keySet() method.
+- we can use it to fetch all the values against each key
+
+
+
+HashTable() : Thread safe
+- HashMap() and HashTable() are almost same.
+- The only differene is with the use of Thread.
+- If you're working with multiple threads then use HashTable() else if you have to work with normal Map then use HashMap().
+- Also if you need to work with HashMap() only and threads also then you can use the keyword Synchronized and it will acts as HashTable
+
+HashMap() + Synchronized keyword ==> HashTable
