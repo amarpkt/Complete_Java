@@ -1,1 +1,70 @@
 GenericExample: 
+Here we can see that there are multiple classes we've used
+- IntegerPrinter
+- DoublePrinter 
+
+So for different uses, we use different classes.
+
+    class IntegerPrinter {
+    Integer thingToPrint;
+    
+    public IntegerPrinter(Integer thingToPrint){
+     this.thingToPrint = thingToPrint;
+    }
+    public void print(){
+     System.out.println(thingToPrint);
+    }
+ }
+
+
+ Here, we can see that the class IntegerPrinter has 
+    - one variable declared of Integer type/
+    - one constructor to receive value while object creation
+    - one print method which prints the value of Integer variable.
+
+- Now any object created with this class will have the Integer type value only.
+- we can not pass any float object  or String object or Car Object or Dog Object
+
+- Same is the case of Double object creation:
+        DoublePrinter printer2 = new DoublePrinter(11.11);
+        printer2.print();
+- when a Double object is created then only Double type argument (11.11) can be passed.
+
+- So the poblem here is that for each object type there shall be seperate class.
+- we can not have multiple object type in a single class.
+
+- Now comes the GENERICS in Picture: GenericExample2.java
+         class Printer<T> {
+            T thingToPrint;
+    
+            public Printer(T thingToPrint){
+                this.thingToPrint = thingToPrint;
+            }
+            public void print(){
+                System.out.println(thingToPrint);
+            }
+        }
+- Here we can see the difference in the two classes.
+- We've used <T> : T referes to Type word, means data type or Object Type. 
+- So here we can have any type of Object created, this class works for all.
+- initially in first example we used: 
+    IntegerPrinter printer = new IntegerPrinter(12);
+    printer.print();
+- but with generics we will use: 
+    Printer<Integer> printer = new Printer<>(12);
+    printer.print();
+
+- So this Integer type mentioned while object creation, is calling the Printer<T> class with T as Integer type.
+- We can call same again with Double type:
+    Printer<Double> printer = new Printer<>(12.12);
+    printer.print();
+- And this time the class will be called with T as Double Type.
+
+
+
+NOTE: Generics don't work with Primitive types (int, float, double, char) etc.
+- This needs Object classes like Integer, Float, Double, Cars, Dogs etc.
+
+Advantages of using Generics:
+- We have an option that than creating seperate class for each object type, we can make one Genric class and work efficiently.
+- we have an option of Type Safety with the use of Generics. 
