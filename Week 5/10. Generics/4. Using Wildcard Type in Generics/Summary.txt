@@ -1,0 +1,35 @@
+Demo.java: 
+-  Here we can see the two classes other than Demo: 
+    * Human
+    * Employee
+- Human is a parent class and Employee is a child class.
+
+
+- Run Time Polymorphism: 
+    Ques: Can a Human (Parent) type reference variable refer to Employee (Child) object.
+    Ans: Yes it's possble.
+- So human = employee; --> This is 100% Allowed.
+
+- In Java whenever we're creating an Object (employee), then either it has to be of same type (Employee type) or it's parent type (Human type).
+
+
+
+
+Now lets see the change in Collection: 
+- We've created two types of Collection ArrayList - humanList and employeeList
+- Now we know that Human is parent and Employee is child so can we perform same run time Polymorphism scenario here as well:
+- Ans: NO
+    humanList = employeeList; --> Not allowed at all
+- So here also, we know humanList contains all Human type objects and employeeList collection contains all Employee type object, but still, 
+    humanList collection can not refer employeeList collection.
+
+
+
+Demo2.java: 
+- In this Demo2 class we can see that while creating humanList collection we've not specifiied the Type Human.
+    ArrayList<?> humanList = new ArrayList<>();
+- here we've used a wild card --> ?
+- and now there is no error.
+         humanList = employeeList;
+         humanList = humanList2;
+- both are allowed. 
