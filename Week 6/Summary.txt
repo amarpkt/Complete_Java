@@ -1,0 +1,32 @@
+Week 6 Topics 
+    - Introduction
+    - Need of Stream API  
+    - For Each Method
+    - Stream API
+    - Map Filter Reduce Sorted
+    - Wrapper class
+    - Parellel Stream
+    - Optional class
+    - Method Reference
+    - Constructor Reference
+    - Introduction to DateTime in Java
+    - New Date and Time API in Java
+    - Fundamentals beore IO Operation
+    - Creating File and Directory using File Class
+    - More on files
+    - Writing Data onto file using FileWriter
+    - Reading Data from File using FileReader
+    - BufferedWriter and FileWriter
+    - BufferedWriter and FileReader
+    - Write Operation using PrintWriter
+    - Introduction to Serialization and Deserialization
+    - Serialization
+    - Deserialization
+    - Transient (Selective Serialization)
+
+So on a high level topics covered are:
+    - Stream API
+    - DateTime
+    - FileWriter
+    - BufferedReader Writer
+    - Serialization and Deserialization>

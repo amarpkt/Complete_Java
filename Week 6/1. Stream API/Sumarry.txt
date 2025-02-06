@@ -1,0 +1,5 @@
+Demo.java: 
+- Here we can see the two approaches used to add the values in the List.
+
+- Then we can see the 3 approaches to print the values stored inside the List2
+- Need to focus on the approach 3 
