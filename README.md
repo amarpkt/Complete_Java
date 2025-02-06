@@ -34,9 +34,10 @@ Here I'm trying to push certain handout related to my Java Learning
     - Enum, Enum If & Switch
     - Annotation    
 
-# Week 5: 06th December 2024 - ##th December 2024 ==> ? Days 
-> First break : 06th Dec to 18th Dec: Because of SPAYG Project initiliazation.  
-> Second break: 27th Dec t0 20th Jan: SPAYG Go Live date was 19th January 2025.  
+# Week 5: 06th December 2024 - 06th February 2025 ==> 60 Days 
+> First break : 06th Dec to 18th Dec: Because of SPAYG Project initiliazation (12 days)
+> Second break: 27th Dec t0 20th Jan: SPAYG Go Live date was 19th January 2025. (21 days)
+> Total Break: 33 Days so effectively took a month to finish the Week 5 Module  
     - Types of Interfaces, Fucntional Interfaces
     - Lambda Expression
     - Exception & Exception handling with try catch block
@@ -49,7 +50,28 @@ Here I'm trying to push certain handout related to my Java Learning
     - Comparable vs Comparator
     - Generics in Java, Syntax and usage, Wildcard type, Upper and lower bounds in Generics
 
-# Week 6
+# Week 6 : 07th February 2025 - ## February 2025 ==> XX Days 
+<Stream API, DateTime, FileWriter, BufferedReader Writer, Serialization and Deserialization>
+    - Stream API  
+    - For Each Method
+    - Map Filter Reduce Sorted
+    - Wrapper class
+    - Parellel Stream
+    - Optional class
+    - Method Reference
+    - Constructor Reference
+    - DateTime in Java
+    - Fundamentals beore IO Operation
+    - Creating File and Directory using File Class
+    - Writing Data using FileWriter
+    - Reading Data using FileReader
+    - BufferedWriter and FileWriter
+    - Write Operation using PrintWriter
+    - Serialization
+    - Deserialization
+    - Transient (Selective Serialization)
+
+# Week 7 : 
 
 
 
