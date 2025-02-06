@@ -1,0 +1,49 @@
+Upper and Lower Bound in Java:
+
+UPPERBOUND.java: 
+ - Here we can see  initially that simple humanList can not refer to employeeList as it's not allowed in Generics.
+ - Next we saw that with the help of WildCard humanList2 can refer to employeeList. 
+
+ - next we added the concept of Upper Bound :--> ? extends Human
+ - this applies a cap or we can say an upper bound that all the classes including Human and all child class of Human can be referred by humanList object.
+ - So Employee being a child class of Human is allowed to be referred by humanList collection object:
+    humanList4 = employeeList;  //ALLOWED
+- Now humanList can refer to itself also: 
+    humanList4 = humanList3;   //ALLOWED
+- we know every class parent is Object class, so Object class being parent not child, will not be allowed to  be referred by humanList:
+    humanList4 = objectList; //NOT ALLOWED
+- we know there is no relation between String and Human class, so this one will also be not allowed.
+    humanList4 = stringList; //NOT ALLOWED
+
+
+
+
+
+
+
+LOWERBOUND.java: 
+- here any class which is parent of Human class of Human class itself will be allowed to be referred bu Human class object:
+    humanList3 = humanList; //ALLOWED
+- now the Employee class being not a parent class of HUman class is not aallowed to be referred by Human class.
+    humanList3 = employeeList; //NOT ALLOWED
+- now Object class being parent of Human class is allowed:
+    humanList3 = objectList; ALLOWED
+- and String class is again not allowed as there is no relation with Human class:
+    humanList3 = stringList; NOT ALLOWED
+
+
+
+
+
+UPPERBOUND EXAMPLE:
+- here we have two object in list employeeList and humanList
+- now we are invoking the sleep method with argument as <? extends Human>
+- means we are using UPPER BOUND.
+- here all the child classes of human and human class itself can be used.
+- so when we pass employeeList as argument then also it works:
+    invokeSleep(employeeList);
+
+
+
+lower bound example: 
+- employeeList can not be referred as employeeList being a child and it only accepts either Human or any parent class of Human
