@@ -1,0 +1,40 @@
+Demo.java:
+- here we can see that the forEach() is a method which is declared in Iterable interface which in return accepts Consumer object.
+- Consumer is an interface, a functional interface, which has only one method accept()
+        forEach(Consumer<? super T> action){
+
+        }
+
+- so we have implemented forEach method by creating Consumer interface object, we can do so as it's a functional interface and method is defined here.
+-       Consumer<Integer> con = new Consumer<>(){
+            public void accept(Integer t) {
+                System.out.println(t);
+            }
+        };
+        
+- Now we can use Lambda expression to further optimize it 
+        Consumer<Integer> con = new Consumer<>(){
+            public void accept(Integer t) {
+                System.out.println(t);
+            }
+        };
+
+        Consumer<Integer> con = (Integer t) -> {
+                System.out.println(t);
+        };
+
+        Consumer<Integer> con =  (Integer t) -> System.out.println(t);
+
+        Consumer<Integer> con =  t -> System.out.println(t);
+
+- so now here we can replace the con simply with : t -> System.out.println(t);
+- Thus this is: 
+        Consumer<Integer> con = new Consumer<>(){
+            public void accept(Integer t) {
+                System.out.println(t);
+            }
+        };
+        nums.forEach(con);
+        
+- Equivalent to: 
+        nums.forEach(t -> System.out.println(t));
