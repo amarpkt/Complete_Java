@@ -35,6 +35,89 @@ Demo.java:
             }
         };
         nums.forEach(con);
-        
+
 - Equivalent to: 
         nums.forEach(t -> System.out.println(t));
+
+
+
+
+
+Demo2.java: 
+- here we can see that the for loop is used to fetch each of the values one by one
+- once fetched we have calculated if the number is even or not
+- then we have took an integer sum to hold the values which are even and calculated final sum.
+
+Requirement: what if we can have a simple approach to stream the values in a single line.
+- for this we have the concepts of Stream API
+
+
+Demo3.java:
+- Here first List is decalred then a method Stream() is used at nums.
+        List<Integer> nums = Arrays.asList(4,3,2,5,7,6);
+        nums.stream();
+- stream() is a metod introduced in Java 1.8 in Iterable interface.
+- Stream method return type is Stream:
+        default Stream<E> stream() {
+            return StreamSupport.stream(spliterator(), false);
+        }
+- STREAM: For Example, if a water stream is passed once then same stream can not be touched in a River.
+- So once a stream is used, then same stream can not be accessed again.
+         List<Integer> nums = Arrays.asList(4,3,2,5,7,6);
+         Stream<Integer> s1 = nums.stream();
+         s1.forEach(n-> System.out.println(n)); 
+- so once s1.forEach(n-> System.out.println(n)); is used, then we can not use s1 Stream to print the values again
+- if we try to access this then there will be no compile time error but will be a runtime error for sure.
+
+Filter(): 
+- this method is in Stream interface 
+- this does the job for filtering out the element based on specific Requirement:
+    Stream<Stream> s2 = s1.filter(n -> n%2==0);
+- so it will filer out all the elements which are even.
+
+Map():
+- this method is also present in Stream Interface.
+- this does specific operation on each element of Stream:
+    Stream<Stream> s3 = s2.filter(n -> n%2==0);
+- SO it will multiply each element of stream s2 by 2.
+
+Reduce():
+- this method is also present in Stream interface.
+- this also does specific operation as we can see it adds all the elements in stream s3.
+- this will not return a Stream object rather it returns a Integer (T) object.
+        int result = s3.reduce(0, (c,e) -> c+e);
+- So it will add the vlaues and returns final result.
+
+
+Now the best part is that we don't need to write the same return type again and again if we're to do calculations on nums list;
+- This part: 
+        Stream<Integer> s1 = nums.stream();
+        Stream<Integer> s2 = s1.filter(n -> n%2==0);
+        Stream<Integer> s3 = s2.map(n -> n*2);
+        int result = s3.reduce(0, (c,e) -> c+e);
+        System.out.println(result); 
+        // s3.forEach(n-> System.out.println(n));
+- is Equivalent to :
+        int result2 = nums.stream()
+                    .filter(n-> n%2==0)
+                    .map(n -> n*2)
+                    .reduce(0,(c,e) -> c+e);
+        System.out.println(result2);
+
+- So we can see all we saw in Demo2.java can be converted to a single line with the help of Stream API as shown below:
+
+Demo2.java: older approach
+     int sum = 0;
+        for(int n : nums){
+            if(n%2==0){
+                System.out.println(n);
+                sum = n + sum;
+            }
+        }
+        System.out.println(sum);
+
+Demo3.java: Stream API approach
+        int result2 = nums.stream().filter(n-> n%2==0).map(n -> n*2).reduce(0,(c,e) -> c+e);
+        System.out.println(result2);
+
+
