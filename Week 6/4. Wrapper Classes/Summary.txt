@@ -1,0 +1,30 @@
+for every primitive data type in Java, we've a class in Java which we call as Wrapper class.
+
+byte -> Byte
+short -> Short
+int -> Integer
+long -> Long
+char -> Character
+double -> double
+float -> Float
+boolean -> Boolean
+
+
+
+Boxing: when we declare a variable of Integer Object using new Object creation method.
+    Ex: Integer num1 = new Integer(9);
+
+Auto Bosing: When we assign an Integer value to a reference object of Integer type directly.
+    Ex: Integer num2 = 10;
+
+Un Boxing: When we fetch the value of integer value from an Integer class type manually using function inValue().
+    Ex: int num3 = num2.intValue();
+
+Auto Un-Boxing: When we directly assign a value of Integer type to a primitive type int.
+    Ex: int num4 = num2;
+
+
+
+Parsign Integer value from a String object:
+- using parseInt() function of Integer class we can do so 
+    int num5 = Integer.parseInt("12");
