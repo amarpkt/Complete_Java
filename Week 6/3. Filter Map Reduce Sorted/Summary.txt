@@ -1,0 +1,67 @@
+Filter: n -> n%2 == 0
+- here we have seen that this function is used to filer out the even numbers in the list.
+- upon hovering the work filter in IDE we can see that it's a part of the Stream class in Java.
+- filter method in Stream class is expecting the Predicate class object & return type is also a Stream Object:
+            Stream<T> filter(Predicate<? super T> predicate);
+- So we will create the object of the Predicate class directly here. 
+- Also Predicate is a Functinal Interface in return, with a single method test(T t): 
+            @FunctionalInterface
+            public interface Predicate<T> {
+                boolean test(T t);
+            }
+- Means it return true or false based on certain conditions: 
+- We will write our condition inside the test() method: 
+        if (n % 2 == 0)
+- Thus final Predicate object be like: 
+         Predicate<Integer> p = new Predicate<>(){
+            public boolean test(Integer n) {
+                if(n % 2 == 0){
+                    return true;
+                }else 
+                    return false;
+            }
+        };
+- now if we replace the same object in main result calculation then we'll get same result as we can see in the Filter.java class.
+- In class we can see p is equivalent to n -> n%2==0;
+        filter(p2)   <==> filter(n -> n%2==0)
+
+        
+
+
+
+
+Map: 
+- For map function which is also a function present inside the Stream class, we can see the implementation in Function interface.
+- In function interface we can see a function named aaply(): 
+        @FunctionalInterface
+        public interface Function<T, R> {
+            R apply(T t);
+        }
+- we will use same functional interface named Function here
+- Here T and R two parameter are used , one as an input and the other as output: 
+         Function<Integer, Integer> f = new Function<Integer, Integer>(){
+            public Integer apply(Integer n) {
+                return n*2;
+            }
+        };
+- Here also we can replace the functionality by object f, which is an reference object of Function Interface.
+        map(n -> n*2) <==> map(f);
+
+
+
+
+
+Reduce: 
+- First lets see how to add the numbers:
+    Example: 0, 1, 2, 3, 4
+        0 + 1 = 1
+        1 + 2 = 3
+        3 + 3 = 6
+        6 + 4 = 10
+- means adding two values at a time.
+- we can name it as c & e
+- c: carry (1,3,6 here)
+- e: element (0,1,2,3,4)
+- and what we're doing is c+e
+- In side reduce() function we did same: reduce(0, (c,e) -> c+e)
+- here, 0 is the initial value which we can say int sum = 0;
