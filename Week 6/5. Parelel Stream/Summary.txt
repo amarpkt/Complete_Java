@@ -1,0 +1,47 @@
+Parellel Stream: 
+- in order to understand the parellel streaming we need huge amount of data.
+- For this we can take help of Random class and for loop to generate the random numbers.
+
+Demo.java:
+- Here we can see that we've used Random class to add 10000 random numbers in list.
+
+
+- Now we need to perform two operations using Stream
+    - multiply each number by two
+    - fianlly add all numbers
+
+- for this we will use streaming concept.
+
+
+Demo.java:
+- here we can see the reduce method which is a bit complicated 
+- so we can see the other method in Demo also where mapToInt() is used to convert all values in Stream to Integer values.
+- mapToInt() -> this is used to convert all nums.Stream values to Integer values
+- this way sum() method can be used on stream else it will throw error.
+- sum() method creates sum of all Integer values
+- We can also see the values of sum2 and sum3 which is equal regardless we use normal stream or Parallel Stream
+
+
+Demo2.java:
+- Here we have used the concept of currentTimeMillis() to calculate the time passed in processing the sum.
+- Here we can see that the values in sum2 and sum3 are not that different
+- although it seems that the time will be less in the case of Parallel stream but we can see that the time in Normal stream is less
+- it again depends on machine to machine.
+
+Demo3.java:
+- Here we have applied a delay of 1 millisecod in both normal Stream and Parallel stream case.
+- Ideally the same delay has to create same delay but result shows this:
+    986084 986084
+    Normal Stream time: 16043
+    Parallel Stream time: 1843
+- We can see the sum value is same for both Normal stream and Parallel Stream
+- But there is significant difference in the time elapsed in Normal and Parallel Stream
+- normal almost used 16 second while Parallel used ~ 2 second time
+
+
+
+Conclusion:
+- so we can take the reference of this example, we shall use Parallel streaming in these cases.
+- Also Parallel streaming doesn't work in cases like sorting 
+
+
