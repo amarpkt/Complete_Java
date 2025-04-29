@@ -35,9 +35,9 @@ Here I'm trying to push certain handout related to my Java Learning
     - Annotation    
 
 # Week 5: 06th December 2024 - 06th February 2025 ==> 60 Days 
-> First break : 06th Dec to 18th Dec: Because of SPAYG Project initiliazation (12 days)
-> Second break: 27th Dec t0 20th Jan: SPAYG Go Live date was 19th January 2025. (21 days)
-> Total Break: 33 Days so effectively took a month to finish the Week 5 Module  
+<First break : 06th Dec to 18th Dec: Because of SPAYG Project initiliazation (12 days)>
+<Second break: 27th Dec t0 20th Jan: SPAYG Go Live date was 19th January 2025. (21 days)>
+<Total Break: 33 Days so effectively took a month to finish the Week 5 Module >
     - Types of Interfaces, Fucntional Interfaces
     - Lambda Expression
     - Exception & Exception handling with try catch block
@@ -51,6 +51,7 @@ Here I'm trying to push certain handout related to my Java Learning
     - Generics in Java, Syntax and usage, Wildcard type, Upper and lower bounds in Generics
 
 # Week 6 : 07th February 2025 - ## February 2025 ==> XX Days 
+<Break: 25th Feb 2025 date of operation and break for 2 month for recovery till 29th April 2025>
 <Stream API, DateTime, FileWriter, BufferedReader Writer, Serialization and Deserialization>
     - Stream API  
     - For Each Method
