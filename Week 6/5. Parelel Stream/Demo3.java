@@ -6,6 +6,7 @@ import java.util.Random;
 public class Demo3 {
 
     public static void main(String[] args) {
+        System.out.println("Started......");
         int size = 10000;
         List<Integer> nums = new ArrayList<>(size);
 
@@ -45,6 +46,8 @@ public class Demo3 {
         System.out.println(sum2 + " " + sum3);
         System.out.println("Normal Stream time: " + (endSeq - startSeq));
         System.out.println("Parallel Stream time: " + (endParaSeq - startParaSeq));
+
+        System.out.println("Ended......");
 
     }
 }
