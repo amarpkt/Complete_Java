@@ -1,0 +1,29 @@
+Method reference: syntax :: (two colons)
+
+
+Demo.java: 
+- Here we can see how to convert a list of Names from normal to Upper Case letters.
+- here we can see in stream that we are taling one element at a time from map, say a name and applying a funciton toUpperCase() on it.
+- by applying this funciton toUpperCase(), this will convert the elements to upper case 
+          List<String> uNames = names.stream()
+                              .map(name -> name.toUpperCase())
+                              .toList();
+- here this is a normal approach, now lets see method reference approach.                              
+
+
+Demo2.java: 
+- here we know that for conversion, we're taking one element at a time : map(name -> name.toUpperCase())
+- now method reference says that no need to do so.
+                     map(name -> name.toUpperCase()) ===> map(String::toUpperCase)
+- For every element which is coming from map, convert that element into upper case.
+- Just need to indicate the name of the class where this funciton is defined, String class in this case.
+- So what we're doing here is that, we're taking each element from the map() funciton, and inside this map() function, we're passing another function
+- which is toUpperCase(), without even applying () which is a marker for a function.
+- so this approach of passing a funciton inside a funciton without referring any sort of varibale is called as Method Reference.
+
+
+In a similiar way, we can see how we can change the way we print the values of Upper case names stored in list uNames.
+                 uNames.forEach(i -> System.out.println(i));  //This can be also done using method reference
+                 uNames.forEach(System.out::println);  
+- here all we've to do is call a funciton println() (without using ()), inside another method which is forEach(),
+- and all we have to do is to define which class println() mehtod belongs to which is System.out()            
