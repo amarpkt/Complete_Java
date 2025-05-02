@@ -1,0 +1,28 @@
+optional Class: 
+
+Demo.java: refer below code: 
+          String name = names.stream()
+                        .filter(str -> str.contains("x"))
+                        .findFirst();
+Here it gives error at this point as findFirst is expecting the value to be held in an Optional String rather than a normal String.
+Why? : because findFirst() is of Type Optional.
+And optional is a class introduced in Java 1.8
+> it came into picture in Java 1.8 just to handle a very common exception -> Null Pointer Exception.
+> When we try to perform an operstion on a null value then we get null Pointer exception.
+
+> Optional is a solution for this.
+When you try to print using this: 
+        System.out.println(name.get());
+> You will not get error for NUll Pointer but will get a not found something error.
+> thi can be avoided by using this: 
+              System.out.println(name);
+> here you'll get as optianl.empty
+> Or we can use this also: 
+                System.out.println(name.orElse("Not found));
+> Or you can use this directly:
+          String name = names.stream()
+                        .filter(str -> str.contains("x"))
+                        .findFirst()
+                        .orElse("Not foundd");
+In this way you don't have to you Optional class: it mimics the Optinal class.
+
