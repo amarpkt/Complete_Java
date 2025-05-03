@@ -1,0 +1,25 @@
+Date and Time in Java Application: 
+Before Java 1.8 : we can work with Date and time using: 
+    - java.util.Date  
+    - java.sql.Date
+
+Java 1.8:
+    - Java.time
+
+Java 8 introduced the much-improved java.time package (JSR-310),
+ which is part of the new Date-Time API based on the ISO and Gregorian calendar systems.
+
+
+working with java.util.Date & java.sql.Date:
+- here using Date from util package allows us to use the same without passing any arguments.
+        java.util.Date date = new java.util.Date();
+- while to use the Date from sql package we must pass an argument in Date function:
+        java.sql.Date uDate= new java.sql.Date(time);
+
+Working with java.time:
+- here there are two classes which can be used to work with Date and Time.
+    --> LocalDate
+    --> LocalTime
+- these classed have a common static function which is npw()
+- this now() function is a static function thus no need to create an object unlike the util & sql package Date class where we need to create the object first
+- thereafter we have multiple funciton as shown in Demo2.java which can be used as per the requirements.
