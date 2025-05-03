@@ -1,0 +1,35 @@
+Demo.java:
+- first we have a list of names in variable names.
+- then we can see how we can create a list of Students by calling the constructor of student class (Name one)
+     
+     for(String name : names){
+        students.add(new Student(name));
+     }
+- Here we are using for loop and adding an element in Student list
+- for creating the element we called the constructor of Student class passing one argument from list names
+
+
+
+Now second approach to add the values in Students list is  using the Stream:
+- Here we can use the map() function of the Stream.
+- using map we're creating list of student objects using a list of names
+          students = names.stream()
+                .map(name -> new Student(name))
+                .toList();
+
+
+Third approach: Using constructor reference
+- Here is the syntax: 
+            students = names.stream()
+                .map(Student::new)
+                .toList();
+- Here we can see that we just need to pass the constructor method which is new and define the type of Object you want  to creat, Student here.
+Question: how come it know to call default constructor or parameterized one
+Ans: We're using Strem of names, which is transferring the name one by one so it will call the parameterized constructor only. 
+
+Reference of method reference: 
+               List<String> uNames = names.stream()
+                              .map(String::toUpperCase)  //This is called Method Reference
+                              .toList();
+
+- So this is the constructor reference which is just like the method reference.
