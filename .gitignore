@@ -1,0 +1,39 @@
+# Ignore compiled class files
+*.class
+
+# Ignore logs
+*.log
+
+# Ignore IDE config folders (IntelliJ, VS Code, Eclipse, NetBeans)
+.idea/
+*.iml
+.vscode/
+*.classpath
+*.project
+*.settings/
+nbproject/
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore build output directories
+out/
+bin/
+target/
+
+# Ignore temporary or backup files
+*.tmp
+*.bak
+*~
+
+# Ignore summary files if you want them local-only
+# (Uncomment if you don’t want to push them)
+# summary.txt
+
+# Ignore Java REPL or scratchpad outputs
+jshell*
+
+# Ignore JAR/WAR files if you generate them
+*.jar
+*.war
