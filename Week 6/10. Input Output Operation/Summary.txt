@@ -1,0 +1,62 @@
+Input Out Operationm in Jav: 
+
+Refer Demo.jav: 
+- Here we can  see a simple program where Student obeject is being created and being printed on console.
+- So this execution is taking place at the RAM level.
+
+Background: 
+- when we write as Java program, then that Java program in order to be executes needs to be loaded to the RAM.
+- inside the RAM, we've one region which we called JRE, wherein the java program will be executed.
+- Inside theis JRE, we've an inside region which we call JVM.
+- JVM will make use of few memory areas in order to execute the java code loaded inside the RAM.
+- JVM will allocate the heap memory for storing the objects.
+- JVM will allocate the stack memory for storing the reference of Method.
+
+- Once program execution is done, JVM will shut down and whatever memory allocation was there, that will also be deallocated.
+- as when JVM shuts down, the memory allocated on stack will be deallocated and correspondingly the reference stored in stack is deleted, 
+- this will result in reference less data stored in Heap, and in sometime this data from Heap will also be deleted being a reference less data.
+
+
+
+Now we want some persistany, that the data stored shall be permanent: we can use: 
+     - Hard Disk for data storage.  (Using I/O operations)
+     - Database for data storage.   (Using JDBC Connection)
+
+
+Input OutPut Operation: java.io.* pacakage is used
+- here we first created a file object by providing an argument (path of a file which does nott exists)
+- when we check this, this will retun false as there is no such file which exists by name java.txt
+
+Now we'll use a fucntion createNewFile() function to create a new file in the with name java.txt as this was created using object referenc of file1.
+- file1 is an object reference which was created with file name java.txt thus a new file is created with nama java.txt
+
+
+If a file is alreadt existing then it will not create a new file and return false in that case.
+
+
+Creating the Directory using File class: 
+- we can create the Directory in a similar way as we created the new file.
+- by using mkDir() function.
+
+
+Summary: Demo3.java
+- So here we can see that how a Directory and a file is being created using a same File class, but using diff methods [createNewFile() and mkDir()].
+
+
+
+Demo4.java:
+- Here we can see few funcitons that we can use to work with File:
+     * exists(): it tells weather file exists or not
+     * getPath(): it gives the path of the file
+     * isDirectory(): it tells weather an object being referred is a Directory or not.
+     * isFile(): it tells weather an object being referred  is a file or not.
+- Same all we can do for a directory as well.
+
+- One more thing which we can do with the File object is to check within a directory how many files exists:
+List(): 
+- this funciton can be used to list all the number of the files within a directory.
+          File file2 = new File(dirPath);
+          String files[] = file2.list();
+            for(String name : files){
+                System.out.println(name);
+            }
