@@ -1,0 +1,39 @@
+07th May 2025
+- For adding a new Project on Github we need to do three things:
+1. Obviosuly crate a project local on your System.
+2. Create a git Repo on GitHub Account.
+3. Connect your Git Hub Repo with your  local setup of the project
+
+On a low level we need to follow below steps:
+- Obviosuly we're starting with creating a project in Local System.
+- Then we need to create a repo on GitHub:
+    > Profile > Repositories > New > Give a unique repo Name > Provide a meaningful Descriptio of Repository > assign privacy Public or Private > Add a readme fail > Create Repository
+- Once created you'll get a connect command as like below: 
+    echo "# Projects" >> README.md
+    git init
+    git add README.md
+    git commit -m "first commit"
+    git branch -M main
+    git remote add origin git@github.com:amarpkt/Projects.git
+    git push -u origin main
+- Here important line is the second last one which will help us to link Local Repo with Github Repo
+- now go to your local project setup, VS Code maybe.
+- Check if git is initialized in the Folder, if not, use "git init" command to initialize the git.
+- Then use this command to connect repo: 
+    git remote add origin git@github.com:amarpkt/Projects.git
+- Then check the status: 
+    git status
+- Obviosuly you'll see the messages in red that there are multiple files which needs to be added.
+- Then use below command to add the files in staging area: 
+    git add .
+- then check the status, this time you'll see the files in green to be able to be added to local git repo.
+- To commit the changes, use below command with a meaningful name:  
+    git commit -m "Initial commit"
+- Now push the changes to git hub repo
+    git push origin main
+
+
+One thing to note here is that, by default your local repo will create the master branch/
+- I prefer it to look like a main branch rather than master branch 
+- so to convert this names use this command before connecting local repo to git hub repo.
+        git push -u origin main

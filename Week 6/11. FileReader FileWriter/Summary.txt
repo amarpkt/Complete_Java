@@ -1,0 +1,42 @@
+File Wtiter: To write something in a file.
+- Here also java.io.* package would be used to work with file Writer.
+- For writing we'll need two objects: 
+    > One to work with file, like passing file name and location : File
+    > one to write the data into the said file memtioned in file : FileWriter
+
+- File file = new File(filePath);
+- FileWriter writer = new FileWriter(file);
+
+here file object reference is used to locate the file
+here writer object reference is used to write the date into above file.
+- on running the code in Demo.java, Output will be: 
+            Java
+            A
+            a
+            alien
+
+- However if we want to not override the whole data but want to add a new data then we can use this: 
+            File file = new File(filePath);
+            writer = new FileWriter(file, true);
+- Here true in the FileWriter constructor will make sure not to override the data but to add a new Data in the file.            
+
+
+
+
+
+File Reader: 
+- File reader work with class FileReader
+- only thing tp note here is that reader.read() method is returning integer value.
+- thus it will return 74, as the J is the ASCII value of 74
+
+- if we want to hold J, rather than 74 then we need to convert it explicitly to character
+
+
+Demo3.java: 
+- here we will see how a character array is used to store the values of the file java.txt
+- here this line: 
+        reader.read(ch);
+- this line is directly taking the values and pushing it in character array ch 
+- and making the conversion implicitly        
+- but in actual there is no int to char conversion taking place
+- it's a functinality of read(ch) function to read the value and store directly in charactre array

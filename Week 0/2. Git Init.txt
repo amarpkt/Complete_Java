@@ -1,4 +1,4 @@
-Now if we want to create a project then we will create a folder in out system, let say folder name - GitTest
+Now if we want to create a project then we will create a folder in our system, let say folder name - GitTest
 - now open the folder in VS Code, try to check the status of git here: 
 - to check the status : git status
             O/P: fatal: not a git repossitory (or any of the project directories): .git
