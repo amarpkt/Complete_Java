@@ -10,13 +10,13 @@ public class Demo{
         FileWriter writer = null;
         try{
             File file = new File(filePath);
-            writer = new FileWriter(file, true);
+            writer = new FileWriter(file);
             
             writer.write("Java");
             writer.write("\n");
             writer.write(65);
             writer.write("\n");
-            writer.write(97);
+            writer.write(66);
             writer.write("\n");
             char ch[] = {'a', 'l', 'i', 'e', 'n'};
             writer.write(ch);
@@ -25,6 +25,7 @@ public class Demo{
 
         }catch(Exception e){
             System.out.println("Some Problem");
+            e.printStackTrace();
         }
         finally{
             writer.close();

@@ -40,3 +40,20 @@ Demo3.java:
 - and making the conversion implicitly        
 - but in actual there is no int to char conversion taking place
 - it's a functinality of read(ch) function to read the value and store directly in charactre array
+
+
+
+NOTE: FileWriter
+- while writing the data if we write JAVA then it gets stored as JAVA
+- But if we write 65 and 66 then it gets stored as A and B 
+- Here we can not see that same value is getting stored.
+- The same issue is in BufferedWriter
+- The same issue is sorted in PrintWriter with the use of println() method.
+
+NOTE: FileReader
+- Here the thing is revered, if we are storing the value as JAVA in a file
+- then on using simply FileReader it returns ASCII values: 74, 97, 118, 97, 10
+- and if we want actual value then we must convert it explicitly as char(i)
+- This problem is not there in BufferedReader
+- This is because we have one methof readLine() in BugfferdReader which makes the difference.
+- Otherwise if we use same method FileReader.read() in BufferedReader case like BufferedReader.read() then it will also give same value 66 for B stored.

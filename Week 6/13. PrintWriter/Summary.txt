@@ -1,0 +1,5 @@
+PrintWriter:
+Demo.java: 
+- Here we can see a new methof println() which creates the diff in BufferedWriter and FileWriter
+- This method allows us to print the values in form of String, boolean or whatsoever format we wamt.
+- There is no complement to PrintWriter like PrintReader. but we can make use of BufferedReader in that place or Scanner or FileReader based on the requirement type.

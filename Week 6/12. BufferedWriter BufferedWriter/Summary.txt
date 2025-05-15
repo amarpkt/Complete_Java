@@ -1,0 +1,43 @@
+Drawbacks of usinf FilwWriter and FileReader:
+- It writes the data in the file in the form of characters.
+- It reads the data from the file in the form of characters.
+- The problem with this is that the number of hits on Harddisk is way too high.
+- This could be a huge problem in case where the number of characters are high.
+
+
+BufferedWriter FilwWriter:
+- Taking example of a pipe line passing a water stream through it.
+- Normally the water flows at a normal rate, which can be considered as a File working in place.
+- But if we attach a electric motor in begining then the same water in same pipe will flow at a much efficient rate.
+- This Electric motor acts as a Buffer which collects some water in a buffred sapce and throws water at a pressure resulting in increased water pressure.
+- This can be treated as a BufferedWriter working in place.
+
+So BufferedWriter needs to be used along with FilwWriter. Why? 
+In Java, BufferedWriter cannot be used alone to write to a file — it requires a lower-level writer, 
+such as FileWriter, OutputStreamWriter, or another Writer subclass that connects to a file or output stream.
+BufferedWriter is a wrapper class that adds buffering functionality to another Writer. 
+It does not know how to access files by itself — it just improves performance by reducing I/O operations.
+
+Same is the working principle behind BufferedReader.
+
+
+PROBLEM: 
+- One problem which we can see in BufferedWriter and FileWriter is that we must specify the integer value of a number.
+- In Demo.java: we are trying to store/write the values 66 and 66.5 then in 66 we have no issue but 66.5 is not allowed by bwriter object.
+- it says explicitly to convert 66.5 to Integer value which then 
+- The same issue is sorted in PrintWriter with the use of println() method. There we can print 66 not A if we want upon writing 66.
+
+
+
+NOTE: 
+- We had a problem that if we write 66 then it stores B in FileWriter and same is the case in BufferedWriter
+- But we had a problem in FileReader that if a Value is written as B then it reads it as 66, which is not present in BufferedReader
+- In BufferedReader if a value is written as B, then it will read and display it as B only 
+- This is because we have one method readLine() in BugfferdReader which makes the difference.
+- Otherwise if we use same method FileReader.read() in BufferedReader case like BufferedReader.read() then it will also give same value 66 for B stored.
+
+
+✅ Here's the key difference:
+BufferedReader.read() behaves the same as FileReader.read() — it still returns 66 for 'B'.
+BufferedReader.readLine() reads a whole line as a String, so it returns "B" (a readable character, not a number).
+
