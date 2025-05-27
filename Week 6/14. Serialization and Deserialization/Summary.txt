@@ -1,0 +1,85 @@
+In continuation to previous IO operations we saw, we are continuating it with the concept of Serialization and Deserialization.
+
+
+I/O: Serialization and Deserialization
+- Reading operations: BufferedReader / FileReader
+- Writing operations: BufferedWriter / FileWriter
+
+For reading a file we can use the concept of FileReader and to enhance the reading we can use the concept of BufferedReader along with FileReader.
+For writing a file we can use the concept of FileWriter and to enhance the reading we can use the concept of BufferedWriter along with FileWriter.
+If we want to store the data as it is like boolean value, decimal value, we can use the concept of PrintWriter.
+
+
+Serialization: 
+- If we want to transport a file on Network, that if someone wants to access that file while transporting via network then the file can not be readable.
+- for this purpose, when we are storing the data onto file, then we shall store the data in a byte format.
+
+- for this kind of operations we can not use the normal classes - FileReader, FileWriter, BufferedReader, BufferedWriter
+- we need to use this: 
+    BinaryFormat/Bytes: InputStream/OutputStream
+
+
+
+Introductino to Serialization and Deserialization:
+- To understand this lets take an example that we've a Student class and in RAM we have created a Student Object.
+- once program is executed, the memory is allocated to the RAM and the moment the prgram execution stop the RAM deallocates the memory of Student object.
+- followed by JVM Shutdown.
+
+Now we want persistancy: means before the memory is deallocated from the RAM, the object stored in RAM shall be transferred to a file in local Hard Disk.
+- and while storing the object we don't want to store it as it is, rahter we want to store in the form of Bytes.
+- and once data stored in the file in local system, no one will be able to understand the file as it is stored in the form of bytes.
+- Also we can transfer this file over network as it contains the informatino in form of Bytes which is not in a readable format.
+- this whole process is called as Serialization.
+
+
+Steps: 
+Step 1: crush the object stored in RAM in form of bytes, using OOS ==> OBJECT OUTPUT STREAM.
+Step 2: Transfer the file containing crushed objects in form of bytes, from RAM to local harddisk, using FOS ==> FILE OUTPUT STREAM.
+Step 3: Transfer the file containing crushed objects in form of bytes, from local harddisk to RAM, using FIS ==> FILE INPUT STREAM.
+Step 4: decrushing the file containg stream of Bytes, to convert it to a readable format, usinf OIS ==> OBJECT INPUT STREAM.
+
+OOS: Object Output Stream
+FOS: File Output Stream
+FIS: File Input Stream
+OIS: Object Input Stream
+
+
+
+NOTE: Whichever object you want to store securely, Student Object here, that respective class (Student class) must implement "SERIALIZABLE" Interface.
+- So here Student class must implement serializable interface if we want to achieve Serialization here.
+- That way JVM will understand that the Student object is not any normal object, rather serializable 
+Also whenever we implement any Interface in Java, we need to give definition of all the methods of that Interface.
+    - Example: if you're using the Runnable Interface, then we must use the Run() method in our code.
+- but in serializable Interface we don't need to define any method in class implementing the serializable interface as this is a marker interface.
+
+example: LaunchIO.Java
+- here we can see we have used FileOutputStream for Transporting to Network layer
+- we used ObjectOutputStream for converting the Object into a crushed file with byte stream
+
+- In the end we can see serial.txt file getting created and byte stream stored in it when we used the line: 
+ oos.writeObject(stu1);
+
+ - Also to enhance the working we can use  BufferedOutputStream: 
+            FileOutputStream fos = new FileOutputStream("C:\\Files\\Java\\Complete_Java\\Week 6\\14. Serialization and Deserialization\\serial.txt");
+            BufferedOutputStream bos = new BufferedOutputStream(fos);
+            ObjectOutputStream oos = new ObjectOutputStream(bos);
+            oos.writeObject(stu1);
+
+
+
+
+Deserialization: 
+- Reconstructing the Object from Cushed format (Byte stream) to normal object
+            FileInputStream fis = new FileInputStream("C:\\Files\\Java\\Complete_Java\\Week 6\\14. Serialization and Deserialization\\serial.txt");
+            BufferedInputStream bis = new BufferedInputStream(fis);
+            ObjectInputStream ois = new ObjectInputStream(bis);
+            Student st = (Student) ois.readObject();
+
+
+
+
+Transient Serialization: 
+- When we want to store the information but not all
+- we need to used transient keyword before a field
+- In Serialization there will be no change
+- but in Deserialization, we;ll see the value as zero as zero is the default value.            
