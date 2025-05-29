@@ -1,0 +1,77 @@
+Arrays: 
+int a = 1;
+int b = 2;
+int c = 3;
+int d = 4;
+int e = 5;
+
+this can be stored in an Array as:
+int nums[]  = {1,2,3,4,5};
+
+
+- In Java, arrays are stored in a continuous (Contiguous) memory locations.
+- When you create an array in Java, memory is allocated in one block that's big enough to store all it's elements
+- The indexing (0,1,2,3,...) relies on this continuous memory layout to calculate the memory address, of each element directly, 
+    which is why array access is so fast.
+
+For example: we have int nums[] = new int[3];
+------------------------------------------
+memory address              values       |
+------------------------------------------
+1000                        32           |
+1004                        21           |
+1008                        16           |
+------------------------------------------
+
+each int typically takes 4 bytes. The address are continuous (1000, 1004, 1008) which allows quick access by calculating the address as:
+    base address + (index * size of elemt)
+
+so if we need to fetch value of nums[2]: 
+    then Java will firts calculate address: 
+        -> 1000 + (2*4) ==> 1008
+    then get the value of element at address 1008
+        -> value = 16
+
+
+Now in terms of ADT: Abstract Data types we need to have certain operation which can be done on this array.
+1. Read Operation: Reading an element with provided index value say what is present at nums[2]
+    - we just saw above how read operation is done in arrays
+    - it simply uses the formula and fetches the value:
+        nums[2] = base address + (index * size) ==> 1000 + (2*4) = 1008
+        - value is 16 at 1008
+
+2. Search Operation: Searcing an element with provide actual value not the index, say find element 16 present or not in array nums[] = {21,32,16,45}
+    - so for search we don't search for an Index, rather we search for an actual value, say 16.
+    - In order to find the value, it starts searching from index 0 and search till end. It compares each value. 
+    - So search operation is a time consuming process, as for example if we have an array of size 1000 and expected element is at index 999
+    - then in that case JVM needs to pick and compare the 1000 values to finally find the element at 999th index.
+
+3. Insert Operation: inserting an element with provided index value to insert at.
+    - If we need to insert at the end of the array then it's quite simple. Simply get the size of the array and insert at the next index.
+    - Like in an array of size 3, the last index will be 2, and we can simply add the element at the index 3. 
+    - but if in an array of size 5, we need to add the element at the index 1 i.e. 2nd element.
+    - then in that case we can't simply create an extra space. we need to push all the elements one by one to the end and then insert the element in the vacant space created.
+    - for an instance if we need to add X at index 2 : then we need to perform this : 
+                1 2 3 4 5 
+                1 2 3 4 5 _
+                1 2 3 4 _ 5
+                1 2 3 _ 4 5
+                1 2 _ 3 4 5 
+                1 _ 2 3 4 5 
+                1 X 2 3 4 5 
+
+4. Delete operation: deleting an element with provided index
+    - Again here deleting an element from the end is always an easy job.
+    - But deleting an element from say 2nd position or any mid position is too complex
+    - Here also when you delete an element then the vacant space created has to be filled by its subsequent element one by one
+    - Example: Here you want to delete element 2:
+                1 2 3 4 5 
+                1 _ 3 4 5
+                1 3 _ 4 5
+                1 3 4 _ 5
+                1 3 4 5
+
+
+
+So here in all operation the thing which makes the difference is time taken in each operation.
+For this we have a parameter which helps in differentiating the operations performance - Big O Notation.

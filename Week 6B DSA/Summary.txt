@@ -1,0 +1,58 @@
+Week 6B Topocs - DSA:
+- What are Data Structures
+- Abstract Data Types
+- Arrays
+- Big O Notation - Time Complexity
+- Linear and Binary Search - Theory and code
+- Bubble Sort 
+- Selection Sort
+- Insertion Sort
+- Quick Sort
+- Divide and Conquer
+- Tree Introduction
+- Recursion
+- Merge Sort
+- LinkedList 
+- Stack: Push and Pop
+- Queue: Enqueue and Dequeue, Circular Queue
+- Tree Data Structure, Binary Search Tree. Tree Implementation
+
+On high level:
+- Abstract Data Types
+- Arrays
+- Linear Search
+- Binary Search
+
+- Bubble Sort
+- Selection Sort
+- Insertion Sort
+- Quick Sort
+- Merge Sort
+
+- LinkedList
+- Stack
+- Queue
+- Tree
+
+- Recursion
+
+
+
+Most common INterview questions: 
+Search - Binary search
+Sorting - Merge Sort
+
+
+Although common are : 
+Search:
+    - Linear Search
+    - Binary Search
+Sort: 
+    - Bubble Sort
+    - Selection Sort
+    - Insertion Sort
+    - Merge Sort
+    - Quick Sort
+    - Heap Sort
+    
+

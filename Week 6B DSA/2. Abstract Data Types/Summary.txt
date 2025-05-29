@@ -1,0 +1,37 @@
+Abstract Data Types: ADT
+This is different from Abstract Methods which we use in Interface concept.
+
+We know int, String, long, float: these are system defined data Types
+we also call it Primitive data Types
+
+But there are options to create your own data types, like you want to denote an Object that this object is of Phone type.
+Example there is an Object "Nokia_1100", so you can tell that this object Nokia_1100 is of Phone type.
+        Phone Nokia_1100 = new Phone();
+So here Nokia_1100 is an Object which is of Phone type, provided we've a class Phone with proper definitions.
+So Class Phone, is a complex data type which itself have variables which are of Primitive type.
+
+    Example: 
+        Class Phone{
+            int model;
+            String name;
+            float price;
+        }
+
+So here class Phone acts as a data type when we create an object of Phone type:
+        Phone Nokia_1100 = new Phone();
+Object Nokia_1100 have it's own model, name and price.
+
+
+now situation comes where we need to store a huge number of values:
+    int a = 2;
+    int b = 3;
+    int c = 5;
+    and so on...
+This can be used in some other way when we use Array:
+    int nums[] = {2,3,5};
+So here we've used a single variable nums and stored all values in it which initially we stored using three diff variables.
+Now in this data type, with variable name nums, we can see that we do have the option to perform some task like , Read(), Search(), or Add()
+So this operation should be possible in this data type.
+
+So when you have the type where you can perform certain operations we call them as Abstract Data Types.
+

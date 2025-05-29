@@ -1,0 +1,25 @@
+What are Data Structures:
+
+primitive data types:
+ int a = 5;
+ String name = "Amar";
+
+ So here we can see that we are storing the data in a variable a, name as per the data type like weather we want to store an integer or a String.
+
+ Data Structure: It's a way to organize and store the data efficiently.
+ Efficiently: means in terms of Performance
+              means in terms of memory
+
+So there are multiple application types: 
+    - A Calculator
+    - A banking application
+    - A shopping application like Amazon
+
+So based on the application type we use a respective Data Structure to store the data 
+
+Algorithm: Set of instructions to perform computation.
+like: 
+ int a = 2;
+ int b = 3;
+ sum = a + b;
+ Output sum;
