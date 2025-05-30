@@ -1,0 +1,98 @@
+Algorithm: The steps we write to perform a problem.
+
+For one particular problem, we can have multiple algorithm
+    Example: for a problem we can have an Algorithm which use less space - Space Complexity
+             and for same, we can have an algorighm which use less time  - Time Complexity
+
+Calculating CPU time is not an efficient way to find which Algorithm is good. 
+Rather we shall use the time algorithm is going to take which shall be same on all computers.
+
+Lets take an example of a sorted array and we will search an element. 
+- For searching, as we say there are multiple Algorithm, but we will see these two: 
+    * Linear searching
+    * Binary searching
+
+- now we will calculate the space and time Complexity and try to find out which one is better.
+
+1. Linear Search:     
+    So we've this sorted array:
+            nums[] = {5,7,9,12,15}
+    if target element is  5: Steps required to search the element is only 1
+    if target element is 15: steps required to search the element is length of the array    
+
+2. Binary Search:
+    So we've this sorted array: 
+            nums[] = {5,6,8,9,11,13,17}
+    here in Binary search we divide the array in two parts using a mid value
+        mid value = (starting index + ending index) / 2
+            m = (0 + 6)/2 = 3
+        then compare the target with mid value, if target is less that mid : ignore the element after mid value- of no use
+        and so on till we find the target element 
+        So with each iteration we keep on reducing the search area by half so that we get the target much earlier than Linear search.
+
+        So for an array of size 1000, with single iteration we reduce the search are by 500
+        with second iteration we reduce the search area to 250 element
+        in third iteratino we reduce it to 125
+        then 4th - 63
+        then 5th - 32
+        then 6th - 16
+        then 7th - 8
+        then 8th - 4
+        then 9th - 2
+        then 10th - 1
+        So in only 10 iterations we got out value in Binary search which could have took 1000 Iteration in Linear Search
+
+
+- this we taled about worst case sceanrio. 
+in Happy scenario the linear search would take only one step but in general Binary search is much more efficient.
+
+
+Time Complexity: The measure of how the running time of an algorithm increases with the size of the input data.
+
+Big O Notations: THE BELOW ARE IN INCREASING ORDER OF TIME COMPLEXITY
+    -> O(1) : Constant Time
+    -> O(log n) : Logarithmic time
+    -> O(n) : Linear Time
+    -> O(n log n) : Linearithmic time
+    -> O(n2) : Quadratic time
+    -> O(2n) : Exponential time
+    -> O(n!) : Factorial time
+    
+
+Let's understand the Bi O Notations difference of Linear Search and Binary Search
+Case I: For Both Linear and Binary Search if we want to search for an element with index values say nums[579]: 
+    then it will be one iteration, So iterations are fixed, doesn't matter size is 5 or 5000, when we're searching with an index value.
+- Thus the no of steps are constant for both Linear and Binary Searches
+            BIG O Notations for Linear and Binary Search for provided index value ==> O(1)
+
+Case II: when searching an element with actual value of the element not the index value.
+- Condition: Linear search works same for both sorted and unsorted arrays.
+             Binary Search works only on the sorted array.
+- So we'll consider the case when the Linear search is being performed on a normal array and Binary Search on a sorted array.
+- For now we're excludign the time taken in sorting the array, when searching an element by Binary search.
+
+II-A: Linear Search: 
+    - We can see that in Linear Search if the size of array is 5 then 5 iterations are required
+        if size of array is 1000, then 1000 iterations are required.
+    - Thus Big O Notation ==> O(n)
+    - Means as the size increases the time Complexity increases linearly
+
+II-B: Binary Search: 
+    - As per the condition we are assuming that the array is already sorted.
+    - Now here the time does not increase linearly
+    - We saw an example where for an array of size 7 the number of time mid index is calculated is 3
+    - and in example where for an array of size 1000 the number of time mid index is calculated is 1o only.
+    - SO we can see the size diff of 7 to 1000 and iterations diff of 3 to 7
+    - So that clearly indictaes that time Complexity lies between O(1) to O(n)
+    - means it's neither a constant value nor a linear value.
+    - So Big O Notation of Binary Search ==> O(Log n)
+
+O(Log n) is also almost comparable to O(1) but not exactly: 
+
+
+
+O(1), O(log n) ==> Your algorighm is GOOD 
+O(n)           ==> Your algorighm is OK     
+O(nlogn)       ==> Try to make it Better  
+O(n2), O(2n), O(n!)  ==> Applicatin is worst. Not at all scalable    
+    
