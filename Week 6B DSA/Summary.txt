@@ -20,14 +20,16 @@ Week 6B Topocs - DSA:
 On high level:
 - Abstract Data Types
 - Arrays
-- Linear Search
-- Binary Search
+- Searching Algorithms:
+    * Linear Search
+    * Binary Search
 
-- Bubble Sort
-- Selection Sort
-- Insertion Sort
-- Quick Sort
-- Merge Sort
+- Sorting Algorithms:
+    * Bubble Sort
+    * Selection Sort
+    * Insertion Sort
+    * Quick Sort
+    * Merge Sort
 
 - LinkedList
 - Stack
@@ -38,7 +40,7 @@ On high level:
 
 
 
-Most common INterview questions: 
+Most common Interview questions: 
 Search - Binary search
 Sorting - Merge Sort
 
@@ -48,7 +50,7 @@ Search:
     - Linear Search
     - Binary Search
 Sort: 
-    - Bubble Sort
+    - Bubble Sort: Not efficient but simple to understand
     - Selection Sort
     - Insertion Sort
     - Merge Sort

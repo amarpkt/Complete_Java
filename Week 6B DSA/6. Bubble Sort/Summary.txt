@@ -1,0 +1,45 @@
+Bubble Sorting: 
+- Here we create a bubble and get the largest element in the end 
+- we continue the same iteration and create a two element bubble to push the largest element in the end.
+
+example: 
+    8 6 9 2 4 5
+    
+1st Iteration: 
+    8 6 9 2 4 5
+    6 8 9 2 4 5
+    6 8 9 2 4 5
+    6 8 2 9 4 5
+    6 8 2 4 9 5
+    6 8 2 4 5 9
+
+2nd Iteration: (now exclude index 5 as it's already at right place)
+    6 8 2 4 5 9
+    6 8 2 4 5 9
+    6 2 8 4 5 9
+    6 2 4 8 5 9
+    6 2 4 5 8 9
+
+3rd Iteration: (now exclude index 4 as it's already at right place)
+    6 2 4 5 8 9
+    2 6 4 5 8 9
+    2 4 6 5 8 9
+    2 4 5 6 8 9
+
+4th Iteration:(Now exclude index 3 as it's already at right place)
+    2 4 5 6 8 9
+    2 4 5 6 8 9
+    2 4 5 6 8 9
+
+5th Iteration:(Now exclude index 2 as it's already at right place)
+    2 4 5 6 8 9
+    2 4 5 6 8 9
+
+
+Big O Notation for Bubble sort: O(n2) - (n square)
+    - because we need to run two loops
+        * one for the iterations
+        * Inner loop for each iteration to compare the values and swap
+Note: 
+    - Not an efficient Algorithm
+    - Easy to understand
