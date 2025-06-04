@@ -3,6 +3,7 @@ public class Demo {
 
     public static void main(String[] args) {
         int nums[] = {6, 5, 2, 8, 9, 4};
+        int size = nums.length;
         int temp = 0;
 
         System.out.println("Before Sorting");
@@ -10,7 +11,7 @@ public class Demo {
             System.out.print(num + " ");
         }
         // 8 6 9 2 4 5
-        for (int i = nums.length - 1; i >= 0; i--) {
+        for (int i = size - 1; i >= 0; i--) {
             for (int j = 0; j < i; j++) {
                 if (nums[j] > nums[j + 1]) {
                     temp = nums[j];

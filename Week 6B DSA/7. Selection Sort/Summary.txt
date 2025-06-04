@@ -1,0 +1,43 @@
+Selection Sort: 
+- In bubble sort we ran two for loops:
+    * in 1st we iterate the element
+    * in 2nd loop we swap the elements
+- this gave the time complexity for Bubble sort as O(n2) - n square
+
+- Now in the selection sort, we will make sure to reduce the time from O(n2) to lessser than that.
+- Here in 1st iteration we will make sure to push the smallest element at the begining.
+- now in first iteration end we have two array: 
+    * index 0 : sorted array
+    * index 1 to n-1 : unsorted array.
+
+- now we pick another element from unsorted array and push it to indez 1.
+- now we have two array:
+    * index 0,1: part of sorted array.
+    * index 2 to n-1: unsorted array.
+- So here is selection sort we're not swapping every now and then rather, we are selecting the min value element and then swap it to index 0,1, 2 and so on.
+
+- now here we're not swappig the element in the outer loop, rather we do it in the outer itself.
+
+- Here also the time complexity is O(n2)
+    * here also we have to run two for loops thus the complexity is O(n2)
+    * the only difference is that while in bubble sort we were swapping after each iteration in Inner for loop
+    * in Selection sort we do the swapping only when we have to place the smallest number at index 0 or biggest at end.
+- So we can say in terms of time complexity the bubble sort and selection sort are similiar to each other
+- as both have the time complexity of O(n2), 
+- the difference comes in the number of swaps being performed.
+
+
+
+
+DIFFERENCE:
+- In Bubble Sort, we compare and swap in each iternation in inner for loop. At the end after "nums.length - 1" iterations, 
+    we managed to push the biggest element at the end,
+- So here we're swapping nums.length -1 times in 1st iteration, then nums.length -2 times in 2nd iteration.
+- This increases the total number of swaps.
+
+- Now in Selection sort, we do comapre the values in Inner loop, and store the smallest number index value in a variable say minIndex.
+- Once the 1st iteration is completed then we swap the minIndex element by the index 0, and in second iteration we swap the minIndex element by index 1.
+- this way we don't have to swap for all the iterations being performed in Inner For Loop.
+
+- So we're runnig the two for loops here so TC --> O(n2), but in terms of number of swapping performed, Selection Sort performs better then Bubble Sort.
+
