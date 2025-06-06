@@ -1,0 +1,195 @@
+**Insertion Sort Logic**
+- here in insertion sort we take an element and insert it to it's right place.
+Example: 
+arr[] = 5,6,2,3,1
+
+for { int i = 1 ; i < size ; i++){
+	int key = arr[i];
+	int j = i-1;
+	while(j >=0 && arr[j] > key){
+		arr[j+1] = arr[j];
+		j--;
+	}
+	arr[j+1] = key;
+}
+
+------------------------------------------------------------------------
+Iteration 1:  
+    indexes: 				0 1 2 3 4  
+    arr condition: 			5 6 2 3 1  
+    position of index i,j:  j i  
+        i = 1  
+	    key = i = 6  
+	    j = i-1 = 0  
+    while(arr[j] > key) 
+    -> arr[0] > 6 : 5 > 6 : False --> Exit while loop 
+    -> arr[j+1] = key --> arr[1] = 6 (which is already same)
+		
+------------------------------------------------------------------------		
+Iteration 2: 
+	indexes: 				0 1 2 3 4
+	arr condition: 			5 6 2 3 1 
+	position of index i,j:    j i
+	index i = 2
+	key element = 2
+	index j = 1
+	while(arr[j] > key && j >=0 )
+		arr[1] > 2 --> 6 > 2 : TRUE
+			arr[j+1] = arr[j] --> arr[2] = 6 
+			j-- ==> New Value for Index J = 0
+	now arr = 5 _ 6 3 1  AND key = 2 AND j = 0
+			
+	indexes: 				0 1 2 3 4
+	arr condition: 			5 _ 6 3 1 
+	position of index i,j:  j   i
+	index i = still 2
+	key element = still 2
+	New index value of j = 0
+	while(arr[j] > key && j >=0)
+		arr[0] > 2 --> 5 > 2 : TRUE
+			arr[j+1] = arr[j] --> arr[1] = 5 
+			j-- ==> New Value for Index J = -1
+	now arr = _ 5 6 3 1	 AND key = 2
+	
+	indexes: 				 0 1 2 3 4
+	arr condition: 			 _ 5 6 3 1 
+	position of index i,j: j     i ---------------> now j turned to -1
+	index i = 2
+	key element = 2
+	index j = 1
+	while(arr[j] > key && j >=0) : While loop exits
+	arr[j+1] = key;
+	arr[-1+1] = key --> arr[0] = 2
+	now arr = 2 5 6 3 1
+
+------------------------------------------------------------------------	
+Iteration 3: 
+	indexes: 				0 1 2 3 4
+	arr condition: 			2 5 6 3 1 
+	position of index i,j:      j i
+	index i = 3
+	key element = 3
+	index j = i-1 = 2
+	while(arr[j] > key)
+		arr[1] > 2 --> 6 > 3 : TRUE
+			arr[j+1] = arr[j] --> arr[3] = 6 
+			j--: NEW J = 1
+	now arr = 2 5 _ 6 1  AND key = 3
+			
+	indexes: 				0 1 2 3 4
+	arr condition: 			2 5 _ 6 1 
+	position of index i,j:    j   i
+	index i = 3
+	key element = 3
+	New index j = 1
+	while(arr[j] > key)
+		arr[1] > 3 --> 5 > 3 : TRUE
+			arr[j+1] = arr[j] -=> arr[2] = 5 
+			j--  ==> New value of j = 0
+	now arr = 2 _ 5 6 1	 AND key = 2 and j = 0
+	
+	indexes: 				 0 1 2 3 4
+	arr condition: 			 2 _ 5 6 1 
+	position of index i,j:   j     i 
+	index i = still 3
+	key element = still 3
+	new value of index j = 0
+	while(arr[j] > key)
+		arr[0] > 3 --> 2 > 3 : FALSE: While loop exits
+	arr[j+1] = key;
+	arr[0+1] = key --> arr[1] = 3
+	now arr = 2 3 5 6 1
+	
+------------------------------------------------------------------------
+Iteration 4: 
+	indexes: 				0 1 2 3 4
+	arr condition: 			2 3 5 6 1 
+	position of index i,j:        j i
+	index i = 4
+	key element = 1
+	index j = i-1 = 3
+	while(arr[j] > key && j >=0)
+		arr[3] > 1 --> 6 > 1 : TRUE
+			arr[j+1] = arr[j] --> arr[4] = 6 
+			j--: NEW value of J = 2
+	now arr = 2 3 5 _ 6  AND key = 1 and j = 2 
+			
+	indexes: 				0 1 2 3 4
+	arr condition: 			2 3 5 _ 6  
+	position of index i,j:      j   i
+	index i = still 1
+	key element = still 1
+	New index j = 2
+	while(arr[j] > key && j >=0)
+		arr[1] > 1 --> 5 > 1 : TRUE
+			arr[j+1] = arr[j] -=> arr[3] = 5 
+			j--  ==> New value of j = 1
+	now arr = 2 3 _ 5 6	 AND key = 1 and j = 1
+	
+	indexes: 				0 1 2 3 4
+	arr condition: 			2 3 _ 5 6  
+	position of index i,j:    j     i
+	index i = still 1
+	key element = still 1
+	New index j = 1
+	while(arr[j] > key && j >=0)
+		arr[1] > 1 --> 3 > 1 : TRUE
+			arr[j+1] = arr[j] -=> arr[2] = 3 
+			j--  ==> New value of j = 0
+	now arr = 2 _ 3 5 6	 AND key = 1 and j = 0
+	
+	indexes: 				 0 1 2 3 4
+	arr condition: 			 2 _ 3 5 6 
+	position of index i,j:   j       i 
+	index i = still 4
+	key element = still 1
+	new value of index j = 0
+	while(arr[j] > key && j >=0)
+	arr[j+1] = arr[j] -=> arr[1] = 2 
+			j--  ==> New value of j = -1
+	now arr = _ 2 3 5 6	 AND key = 1 and j = -1
+	
+	indexes: 				 0 1 2 3 4
+	arr condition: 			 _ 2 3 5 6 
+	position of index i,j: j          i 
+	index i = still 4
+	key element = still 1
+	new value of index j = -1
+	while(arr[j] > key && j >=0) : WHILE LOOP EXITS
+	arr[j+1] = key;
+	arr[-1+1] = key --> arr[0] = 1
+	now arr = 1 2 3 5 6
+	
+	now we got out final sorted array
+------------------------------------------------------------------------
+
+
+here also time complexity is still O(n2) - n square
+- because we did used the two loops for and while
+
+Diff compared to Selection Sort:
+- number of swaps: fewer Swaps (More Shifts)
+- while selection sort always swaps once per pass (May be unnecessary)
+
+
+
+Use Cases: 
+	Insertion Sort: 
+		- When the array is nearly sorted	
+		- Works well with small datasets	
+
+	Selection Sort:
+	 - When memory writes/swaps are costly
+ 	 - Simple to implement with predictable behavior
+ 	 
+ 	 
+ 	 
+Summary: 
+---------------------------------------------------------------------------------
+Criteria				| Insertion Sort					|	Selection Sort   |
+---------------------------------------------------------------------------------
+Adaptive				| Yes (fast on nearly sorted)		|	No				 |
+Stable					| Yes								|	No				 |
+Number of Comparisons	| Varies							|	Always n(n-1)/2  |
+Number of Swaps			| Few (in best case)				|	Fixed per pass	 |
+---------------------------------------------------------------------------------- 	 
