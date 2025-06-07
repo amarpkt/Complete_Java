@@ -1,0 +1,9 @@
+Divide and Conquer: 
+when we have a problem, then we divide the problem into sub problems
+- then solve the sub problems 
+- then merge the sub solutions into a parent solution
+
+
+What if the sub problem is itself a huge problem
+- then we divide it into sub-sub problems
+- and so on till we get a smaller problem

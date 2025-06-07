@@ -1,0 +1,147 @@
+Quick Sort:  Usually Quick sort, Merge Sort, And insertion sort are asked in Interviews.
+			 while Bubble sort and Selection Sort are being inefficient, not frequently asked in Interviews.
+			 
+- Till now we saw that in 
+	- Bubble sort
+	- Selection Sort
+	- Insertion Sort
+- they all have the Big O notation of O(n2)
+- here in Quick sort
+	- In Best case - O(nlogn)
+	- In Avg case - O(nlogn)
+	- In worst Case - O(n2)
+	
+What is Quick Sort?
+1. Divide and Conquer:
+	- Mean divide the problems into sub-problems and solve the sub-problems individually and then merge the solutions as one final solution.
+	- P ---> p1, p2, p2 ---> s1, s2, s3 ----> S
+	- P: Problem, S: Solution
+	- Means here we are going to use Recursion.
+2. Pivot: 
+	- It means a central point for your problem.
+3. Tree:
+	- The structure which is formed when we divide the problem into sub-problems and sub-solutions.
+
+	
+	
+Example: 5, 3, 6, 1, 4, 2
+lets find the pivot as we need a point from where we need to divide the array. 
+
+
+
+Theory: 
+When we have to sort a classroom students as per their height, 
+- one way is to class teacher take the lead and he/she asks students move front and back to sort them all.
+- Other way is to ask students to self manage and analyse their heights and they themself arrange them in increasing or decreasig order of heights.
+
+
+We are going to use similar approach here in divide and conquer method.
+
+
+In above example arr = 5 3 6 1 4 2
+lets choose the pivot = 2 - last element
+
+What else we need: 
+	pi: pivot element.
+	i - index
+	j - index
+	hi - high
+	lo - low
+	
+- lets take the element 2 as pivot in above array example:  5 3 6 1 4 2
+initial condition be like: 
+
+	index:    		0 1 2 3 4 5
+	arr: 	  		5 3 6 1 4 2
+	index i,j:    i j				i = -1, j = 0
+	pivot: 					  pi	pi = at index 5
+	low				l				low = at index 0	
+	high 				       h	high = at index 5
+	
+	
+	
+	here a loop runs for variable j: 
+		for(j = low; j < high ; j++){
+			if(arr[j] < pivot{
+				* increment i --> i++
+				* swap(arr[i], arr[j])
+			}
+		}
+		swap(arr[i+1], arr[high])
+		
+	- So here in first for we can see that arr[j] < pivot i.e. arr[0] < 2 : FALSE
+	- now j++;
+	
+	- Next we can see that if arr[j] < pivot: 3 < 2 : False
+											  6 < 2 : False
+											  1 < 2 : TRUE
+	- now perform some action, 
+		* increment i --> i++
+		* swap arr[i] with arr[j]
+	- these are the two operations we need to perform inside the if condition.
+	- so now the condition be like:
+	
+	index:    		0 1 2 3 4 5
+	arr: 	  		5 3 6 1 4 2
+	index i,j:      i     j 		i = -1+1 = 0, j = at index 3
+	pivot: 					  pi	pi = at index 5
+	low				l				low = at index 0	
+	high 				       h	high = at index 5
+	
+	- now we swap the elements at arr[i] and arr[j]
+		index:    		0 1 2 3 4 5
+		arr: 	  		1 3 6 5 4 2  ==> 1 and 5 swapped
+		
+	- increment j now till pi = j
+	- first loop completed
+	- now perform one more swap: Swap pivot with arr[i+1], arr[hgh] --> i.e. swap 3 and 2
+	arr = 1 2 6 5 4 3
+	
+	once done we have two arrays - logically not originally
+	
+	array 1 = {1}
+	then pi = {2}
+	array 2 = {6 5 4 3}
+	
+	array one is already sorted
+	pivot = no seed to sort
+	then apply quick sort on array 2 ==>  6 5 4 3
+	
+	here pi = element 3
+		i = -1
+		j = 0
+		low = 6
+		high = 3
+		
+	- now next iteration: i.e. another recursively calling quick sort
+	check if arr[j] < pivot
+		* 6 < 3: FALSE
+		* 5 < 3: FALSE
+		* 4 < 3: FALSE
+	exit for loop 
+		swap(arr[i+1], arr[high])
+	array be like: 3 5 4 6
+	
+	- now iteration 2: i.e. another recursively calling quick sort
+	array: 5,4,6
+	i = -1, j = 0, pi = 6, low = 5, high = 6
+	now if (arr[j] < pivot): 
+		* 5 < 6 : TRUE --> Do i++, and swap(arr[i], arr[j])
+			arr: as of now i and j are same so swap does not make a sense
+			j++;
+		* 4 < 6: TRUE --> Do i++, and swap(arr[i], arr[j[)
+			again as of now i and j are same so swap does not make any sense
+			j++;
+		* leave for last part as condition fails there
+	- at the end when exit frmo for loop : do the arr[i+1], arr[high] swapping.
+	- this is also same as i+1 and high are same
+	
+	
+	- now another iteration: another recrsive call for quick sort.  
+	and so on.............
+	
+	 
+	 
+	 
+Time Complexity: 
+

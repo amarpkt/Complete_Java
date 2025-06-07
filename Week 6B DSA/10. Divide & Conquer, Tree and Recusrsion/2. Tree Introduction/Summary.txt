@@ -1,0 +1,14 @@
+Tree introduction: 
+- we take a root and create it's sub branch
+
+			5,3,6,1,4,2
+	
+		5,3,6 			1,4,2
+		
+	5	3,6			 1		4,2
+	
+		3	6			4	2
+		
+So here we can see that individual problems are divided in sub problems as a tree structure.
+		
+		
