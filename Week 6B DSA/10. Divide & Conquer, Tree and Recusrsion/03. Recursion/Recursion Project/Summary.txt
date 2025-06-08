@@ -1,0 +1,59 @@
+Recusrsion: 
+- Lets take an example of function calling another function.
+	f1(){
+		f2(){
+		}
+	}
+	
+	f2(){
+		f3(){
+		}
+	}
+	
+	f3(){
+		f4(){
+		}
+	}
+	
+	
+- now the dependency is like f1() calls f2() internally
+	f2() internally calls f3()
+	f3() internally calls f4()
+	
+- so in order to complete the function call f1(), JVM must completes f2(), f3(), f4().
+
+- So what if a function calls itself rather than another function. 
+	f2(){
+		f2(){
+		}
+	}
+	
+- here f2() calls itself. 
+- this is what we call a RECURSION.
+
+- but it's something like f2() calling f2() infinite times. 
+- it could be a never ending loop.
+		
+		
+		
+		
+Demo.java:
+- Here we can see that we've two functions - f1() and f2().
+In f1(): we call f1() infinite times which result in Stackoverflow error.
+
+In f2(): we call f2() but with some limits, i.e. we're reducing the i value and printing till it's 0 or greater then zero.
+
+- so both are recursion example but f2() call has some practical implication with no error.
+
+
+
+FACTORIAL:
+- we know factorial of 0 & 1 is 1, so we can return the both as it is.
+- Now to get value of 5! = 5 x 4 x 3 x 2 X 1= 120
+- or 5! = 5 x 4! (Now here we can make use of factorial)
+
+
+SO in our code we simply put a condition that if i != 0 then return 5 * 4!
+else return 1 in case of zero
+
+
