@@ -1,0 +1,30 @@
+Merge Sort: 
+- Both quick sort and merge sort work on the principle of Divide and Conquer.
+
+here we will divide the array into two - logically not physically.
+- then divide the array till it reaches to single element array
+- then merge the two arrays 
+- then merge the merged arrays till you get the actual sorted array
+
+ 						5 8 7 2 3 4 --> Initial Unsorted Array
+ 						
+ 			5 8 7 						2 3 4
+ 
+ 5 8 				7 			2 3 				4
+ 
+ 
+ 5		8 			7 			2 		3			4
+ 
+ 
+ 
+ 
+ 5 8 		7 				2 3 				4					
+ 
+ 
+ 	5 7 8 							2 3 4
+ 	
+ 				2 3 4 5 7 8 --> Final Sorted Array
+ 				
+NOTE: point to remember here is that once the left side is completed then right side starts.
+- The two don't run in parellel as it seems in the example demonstrated above.			
+ 				
