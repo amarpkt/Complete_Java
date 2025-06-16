@@ -1,0 +1,136 @@
+LinkedList:
+
+Array: fetching the element is O(1) - too fast 
+- but the size is fixed. 
+- if you want to add an element in the array, then it's not allowed.
+- one possible way is to create a new array and then copy the original array element along with addition of new elements
+- too complex process.
+
+Addition of new element in between the elements.
+- this again is too complex process as again you have to create a new array and copy first element, add your new element and then add remaining left element.
+
+Solution to all these problems of Array is LinkedList
+
+
+
+
+LinkedList Node Introduction:
+- In LinkedList , we have concept of Nodes.
+- The element of LinkedList have different addresses unlike Array where the elements are stored in continuous memory pattern.
+Example: 
+	int arr[] = {2,4,1,5} --> Index values {0,1,2,3}
+	address for each element is say 1001, 1002, 1003, 1004
+	so if you want to fetch an element then we can simply add the index value in the first element address
+	- like for fetching the element 4, add index value to it's first element address
+	- first element address - 1001, add index value 3 --> 1001+3 ==> 1004
+	- so the element we're looking will be found at address 1004 i.e. 5
+- but the same is not applicable in the case of LinkedList data structure.
+- the element stored are not in the continuous memory patter: 
+Example: the LinkedList elements are {5,8,1,3}
+	- These can be stored as @105 - 5
+							 @206 - 8
+							 @512 - 1
+							 @618 - 3
+	- So if you have the address of element/Node 1 which is 5, then it's not sure that you can detect the value of Node 2
+	- Node 2 address is @206 and Node 1 address is @105, so it's not predictable.
+	- In this case we have two thing stored at a Node:data & reference
+	
+
+Node: 
+	1. Data
+	2. Reference (Of next node)
+	
+	
+node looks like this:
+
+	5,@206 
+	
+	8,@512
+	
+	1,@618
+	
+	3, @Null
+	
+
+- So we can see that each node has two things- the actual Value and the reference to the next node.
+	
+
+Where is the address of 1st Node stored - HEAD
+Head is a variable where the address of the first node is stored.
+
+
+Operations on a LinkedList: Insert, Update, Delete a Node from/To the LinkedList.
+1. Insert a new Value: 
+	- Create a new Node (the data and the reference which by default is null)
+	- lets say the new Node is created at address @126
+	- Now change the reference of 3,@null NODE from null to @126
+	- this way the Linked List will look like this now:
+		5,@206 
+		8,@512
+		1,@618
+		3,@126  --> here the reference has been changed from NUll to @126 to make the link to new node 6
+		6,@null --> this is the new node added in the linkedLIst
+	
+
+	First And Last Element: 
+	- we saw that the all mid element have the two things - Data and Reference
+	- The last element of the node has the data but the reference is NUll
+	- The first element of the LinkedList is called as HEAD of the LinkedList.
+
+
+2. INSERTING and DELETING THE VALUES FROM any Mid location:
+	Initial State of the Linkedlist:
+		5,@206 
+		8,@512
+		1,@618
+		3,@126  
+		6,@null 
+	- So here we've the LinkedList of 5 elements, and we want to add an element after 8. 
+	- For adding follow these steps: 
+		* Create a new Node: with data as "2" and reference as Null --> 2,@NUll
+		* Now this new node has to be added in b/w node 8 and 1
+		* Replace the reference stored in Node 8 from address of Node 1 to address of Node 2 say @206
+			Now node 8 is connected to Node 2 with this
+		* Replace the reference stored in Node 2 from Null to address of Node 1.
+			Now Node 2 is connected to Node 1 with this
+		
+		8,@512 --> Initial State
+		1,@618
+		
+		8,@512  --> Node 2 Created at address @206, and with no reference (Null)
+		2,@NULL
+		1,@618
+		
+		8,@206 --> Node 8 connected to Node 2
+		2,@NULL
+		1,@618
+		
+		8,@206 --> Node 2 connected to Node 1
+		2,@512
+		1,@618
+		
+- So same for deletion, detach the Node from it's succeeding Node
+- Attach the previous Node with node next to deleted node.		
+		  
+		  
+Demo.java: 
+- Linked List: It's an abstract data structure. (or more precisely Abstract Data Type)
+- ADS/ADT, is a logical description of how data is organized and the operations that can be performed on it, without specifying how it is implemented.
+- In short, ADT focuses on what operations are performed and not how they are implemented.
+Example of ADTs: 
+	List
+	Stack
+	Queue
+	Set
+	Map
+	
+- Linked List does not work with Index
+	Thats why Array list is faster than LinkedList.
+	
+	
+Print Head: nums.peaK()
+	
+	
+	
+
+

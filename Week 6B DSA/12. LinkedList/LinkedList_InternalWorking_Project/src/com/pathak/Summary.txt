@@ -1,0 +1,92 @@
+Internal Working of LinkedList: 
+
+- we created a class LinkedList rather then importing it from Java.util package.
+- Every element is treated as a Node. 
+- For the Node we created a New class Node.
+- We created a constructor of Node class so that we don't have to create a method for it, while creating object only we can pass data and Node is ready.
+
+- Then we need to make sure that the Node which we create, say first Node, shall be referred by a Variable HEAD.
+- Head must point to first element/Node.
+
+
+
+Demo.java: 
+- it starts from: 
+	Node head = null;
+- Now when we create a LinkedList then we need a Head, so first and foremost part is to add head.
+- this we created outside all functions which we created in LinkedList class, so that it's accessible to all methods.
+
+Node: 
+- For each element of the Linked List we refer it by Node.
+- Now a Node has two things - Data and the reference to it's Next Node.
+- We've created a class Node: 
+	int data;
+	Node next;
+- for data we created it as an Integer value for now.
+- For next Node we used the Data Type as Node itself, WHY?	
+	==>	Because Java does not support direct memory access or pointers, and objects are referenced by their types, not their memory addresses.
+		So to point to another node in a linked list, you use:
+			Node next;
+		This is a reference to another Node object — it's Java's safe and object-oriented alternative to memory addresses or pointers.
+		Java hides memory addresses and pointers under the hood. All objects in Java are accessed through references, which are like pointers but safer (you can't do pointer arithmetic or access raw memory).
+		So, when we write:	Node next;
+		we're saying: "next" is a reference to another Node object, Not the actual object, just a reference to it — like a safe pointer.
+- Now when we create a New Node, we can have a Node class with variable defined as int data and Node next.
+- But we have created a constructor as well. Why?
+	Because otherwise it will be like:
+			Node newNode = new Node();
+			newNode.data = data;
+			newNode.next = null;
+- so to reduce this code, we can use constructor because we need to pass only data and next is always null when we create a new Node.
+			Node newNode = new Node(data);
+			
+			class Node{
+				int data;
+				Node next;
+				public Node(data){
+					this.data = data;
+					next = null;
+				}
+
+- now this sorts out creation of a New Node. And now what to do when we add next or 2nd Element.
+- We need to make sure that the element is connected with the previous or Last node present in the LinkedList created.
+- if it's being added for the first time then link it to Head otherwise the last actual node.
+- Two check required: 
+	* if head is null, i.e. empty list then link the newNode with head.
+	* otherwise, iterate the Node till you find the Node whose next is null i.e. the last Node and add the newNode to the Last Node Present in the LinkedList.
+	
+				
+
+Printing Elements of LinkedLists: 
+- we saw in LinkedList from Collection, that we can print the values of LinkedList by just using reference name like nums.
+- we need to create a method also for printing  the values - printValues()
+	public void printValues() {
+		Node current = head;
+		while(current != null) {
+			System.out.print(current.data + " ");
+			current = current.next;
+		}
+		System.out.println();
+	}
+ 
+ 
+ AddFirst Node:
+ - Suppose the current list is:
+ 	5 -> 9 -> 6 -> 
+ - then we call nums.addFirst(4);
+ - then we jump to related method and firts we create a new Node:
+ 	4 -> null 
+ - newNode.next = head;
+ 	this will set it as: 
+ 	4 -> 5 -> 9 -> 6 -> null
+ 	
+ - now add the head reference: 
+ 	head = newNode;
+ 	head -> 4 -> 5 -> 9 -> 6 -> null
+ 	
+ 	
+Delete an Element:
+- When we want to delete a Node, then first of all we need to figure out where is the element present in the LinkedList.
+- once we reach the point whose next value (data) is required value then we stop there.
+- now we just need to point it to next to next element: 
+	current.next = current.next.next;
