@@ -1,0 +1,14 @@
+Stack: 
+- Works on FILO principle - First In Last Out.
+- Common Method: 
+	* Push: To insert value in Stack
+	* Pop: To retrieve value from Stack
+	
+	
+Stack Overflow: When trying to Push an element in a full stack 
+Stack Underflow: When trying to Pop an element from an Empty Stack
+
+We can implement Stack using below Data Structures: 
+	1. Array: - Fixed Sized Array
+			  - ArrayList (Dynamic Sized Array)
+	2. LinkedList

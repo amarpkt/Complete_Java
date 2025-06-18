@@ -1,0 +1,19 @@
+Internal working of Stack: 
+Demo.java: 
+	- we need to declare an Array as we're using array to implement Stack DS
+	- We need an index variable, for which we used top
+	- we need a size variable to store the size of the array
+
+	
+Push - to add values
+Pop - to remove values
+
+POP: This is to remove the element but as it's Stack so it shall pop the top element 
+	- thus so need to pass the element value or index, by default it shall pop top element.
+	- here we need to return the element which we want to remove
+	- thus we returned the element in Pop method
+	- Also we need to reduce the value of top so that the element shall not get inserted again in Stack
+	
+
+Extras: 
+	- We can also implement the isEmpty() and isFull() method alongside all to make it more efficient.

@@ -90,3 +90,4 @@ Delete an Element:
 - once we reach the point whose next value (data) is required value then we stop there.
 - now we just need to point it to next to next element: 
 	current.next = current.next.next;
+
