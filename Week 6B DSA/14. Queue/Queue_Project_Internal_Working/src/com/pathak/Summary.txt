@@ -1,0 +1,7 @@
+Demo.java: 
+- Here we're implementing the Queue with the help of Array.
+- It has simple Enqueue, Dequeue, and show() method
+- but there are multiple checks missing 
+	Ex: if we want to add here one more element, then this not being the circular queue, will fail.
+	
+- for this purpose only, we'll use Circular Queue

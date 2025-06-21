@@ -1,0 +1,113 @@
+Queue: 
+- Works on FIFO principle
+- First In First Out
+
+It works just opposite to stack
+
+Enqueue: Inserting the element
+Dequeue: Removing  the element
+Peek: It gives the value but do not remove the element from Queue.
+
+
+We can implement the Queue with the help of: 
+	- Array 
+	- Linked List
+	
+ 
+ 
+Lets see the problem of Queue Implemented using Array: 
+eg: 5, 8, 4, 9
+
+Dequeue: we got 5 
+resulted Array: _, 8, 4, 9
+ 
+Now Array size is fixed and if we want to insert an element 7 post 9 then we can not add, as size is still full, 
+Although the index 0 has null value.
+ 
+So this is one problem.
+ 
+Now One solution is to shift the three values - 8,4,9 one step left side 
+and then add 7 at index 4, but this will involve whole lot of computation as shifting values is a time consuming process.
+
+The Other solution is : Circular Queue (Still using Array - Fixed Size)
+
+
+note: we use the variables front and rear to implement Queue
+	- In Beginning,
+		_,_,_,_ 
+		front = 0
+		rear = -1
+	- Enqueue 5: front stays same at zero, and rear moves +1 at Zero
+		5,_,_,_
+		front = 0
+		rear = 0
+		
+	- Enqueue 8: front stays same at zero, and rear moves +1 at index 1
+		5,8,_,_
+		front = 0
+		rear = 1
+		
+	- Enqueue 4: front stays same at zero, and rear moves +1 at index 1
+		5,8,4,_
+		front = 0
+		rear = 2
+		
+	- Enqueue 9: front stays same at zero, and rear moves +1 at index 1
+		5,8,4,9
+		front = 0
+		rear = 3
+		
+Now we can see that in Enqueue, rear moves or increments by one each time. Now let's see Dequeue
+
+	- Dequeue 5: front moves to 1, and rear stays at index 3
+		_,8,4,9
+		front = 1
+		rear = 3
+		
+	- Dequeue 8: front moves to 2, and rear stays at index 3
+		_,_,4,9
+		front = 2
+		rear = 3
+		
+	- Dequeue 4: front moves to 3, and rear stays at index 3
+		_,_,_,9
+		front = 3
+		rear = 3
+
+	- Dequeue 9: front moves to 4, and rear stays at index 3
+		_,_,_,_
+		front = 4 ==> Problem at array size is 4 only
+		rear = 3
+		
+		
+So here comes the requirement of Circular Queue, to get rid of this issue.
+
+
+CIRCULAR QUEUE: 
+- So till now we saw that for enqueue, we need to increment rear by 1
+- and in order to perform dequeue, we need to increment first by 1
+- in a circular queue, in a condition when index 0 is empty with a dequeue performed. 
+and we have an element to be inserted, then for this time to perform enqueue, 
+
+example: 5,8,2,3 --> f=0, r=3
+Dequeue: _,8,2,3 --> f=1, r=3
+
+now in this position, we have to insert element 9, which obviously we can not perform right now at index 3
+- so we know to enqueue, rear is incremented by one, so we will increment it to 3 to 0 not 4
+
+for this particular part only we'll take help of modulus operator.
+			(rear+1) % size
+--> 0%4 = 0
+--> 1%4 = 1
+--> 2&4 = 2
+--> 3%4 = 3
+
+
+We'll see the implementation later in Queue_Project_Internal_Working
+- For now refer Demo.java for working of queue with LinkedList backend provided by Java.
+
+
+	
+	
+ 
+ 
