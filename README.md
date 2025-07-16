@@ -50,7 +50,7 @@ Here I'm trying to push certain handout related to my Java Learning
     - Comparable vs Comparator
     - Generics in Java, Syntax and usage, Wildcard type, Upper and lower bounds in Generics
 
-# Week 6 : 07th February 2025 - ## February 2025 ==> XX Days 
+# Week 6 : 07th February 2025 - 03rd May 2025 ==> 3 Months (with 2 Months Break) 
 <Break: 25th Feb 2025 date of operation and break for 2 month for recovery till 29th April 2025>
 <Stream API, DateTime, FileWriter, BufferedReader Writer, Serialization and Deserialization>
     - Stream API  
@@ -71,6 +71,24 @@ Here I'm trying to push certain handout related to my Java Learning
     - Serialization
     - Deserialization
     - Transient (Selective Serialization)
+
+# Week 6B: DSA
+    - Abstract Data Types
+    - Arrays
+    - Big O Notation
+    - Searching
+        * Linear Search
+        * Binary Search
+    - Sorting 
+        * Bubble Sort
+        * Selection Sort
+        * Insertion Sort
+        * Quick Sort
+        * Merge Sort
+    - Linked List
+    - Stack
+    - Queue
+    - Tree
 
 # Week 7 : 
 

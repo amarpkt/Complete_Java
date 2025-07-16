@@ -1,0 +1,141 @@
+Tree: 
+- it's a data structure when we have a parent and it's child and child element has it's own set of Sub-child.
+- This goes on and form like a Tree Structure
+
+
+In order to understand the Tree, we must go through these terminologies:
+- Node: Every element in tree is Node
+- Root: Every tree has one parent Element at Top Level (Root Node has no Parent Node)
+- Edge: Line which connect parent and child is called Edge
+- Parent: B is a parent Node of D,E Nodes
+- Child:  B is a child  Node of A Node
+- Leaf: A Child node which do not have any sub-child. Ex: D,E,F,G
+- Depth: How many edges one pass to reach a Node from Root. Ex. Depth for E is 2 (A-->B, B-->E)
+- Height: Highest depth of a Node. Ex. A-->H (A-->C, C-->G, G-->H) THREE is height of Tree
+- Subtree: Sub tree are many. Ex. B,D,E : this is a subtree with root Node as B
+- Binary Tree: when the max no of child in tree to a node in Tree are 2 (Means either 0,1 or 2) then it's a Binary Tree.
+
+
+					A
+					|
+			----------------
+			|				|
+			B				C
+	-------------		-------------
+	|			|		|			|
+	D			E		F			G
+									|
+									H
+		
+		
+		
+		
+Binary Search Tree: 
+- When the tree has a structure that the child nodes from each parent node have the position that left side is smaller and right is greater than parent node.
+Example: 
+				5
+				|
+		  -----------------
+		/					\
+	   4					 7
+	  /						 |		
+	 3				 --------------
+					/				\
+				   6				 8
+					
+so here 5 has two nodes, 4 being smaller than 5 is on Left
+						 7 being greater than 5 is on right
+						 
+In Node 7, 6 being smaller is on left
+		   8 being greater is on right
+		   
+So if we have reverse situation like we have below elements and we need to make a tree structure.
+	8,7,12,15,2,5
+	
+	we will make the tree like this:	
+	
+					 8
+					/\
+				   /  \
+				  /    \
+				 7		12
+				/		 \
+			   /	      \
+			  2			   15
+			  	\
+			  	 \
+			  	  5
+How it's made: 
+- start with 8 being the root.
+- 7: less than 8--> Goes to the left of 8
+- 12: greater than 8 --> Goes to the right of 8
+- 15: greater then 8, 
+		greater than 12
+			goes to the right of 12
+- 2: less than 8
+		less than 7
+			goes to the left of 7
+			
+- 5: less then 8
+		less then 7
+			greater then 2
+				goes to the right of 2
+				
+				
+Implementing the Tree:
+Demo.java
+	- we can implement the Tree with Linked List with each element acting as a Node
+	- Then while implementation we don't need to worry for whole tree but a single structure with a parent/root node and it's child
+		Example: in above case 8,7,12 only
+	- now we need to keep in my mind about a Node 8 with no Parent and nodes 5,15 with no child Node
+	
+	
+
+Implementation: 
+- Remember in Linked List implementation, we need to keep two things in a Node - Data, Next Node Reference, as shown below:
+			class Node{
+				int data;
+				Node next;
+
+				public Node(int data) {
+					this.data = data;
+					next = null;
+				}
+			}
+			
+- Now in Tree DS, we need to keep three things in Mind - Data, Left Node, Right Node
+- Also we need to use recursion to implement this.
+- and we need to have a hold on Root Node till it's all child Nodes are added.
+
+
+Tree Traversal:
+- In order to traverse to a tree we've different methods to traverse to Tree.
+	1. In Order traversal
+	2. Pre Order Traversal
+	3. Post Order Traversal
+
+- The difference lies in the way we print root Node.
+						
+					 8
+					/\
+				   /  \
+				  /    \
+				 7		12
+				/		 \
+			   /	      \
+			  2			   15
+			  	\
+			  	 \
+			  	  5
+			  	  
+- So in above example: 
+	1. In Order Traversal: Left --> Root --> Right (7,8,12)
+	2. Pre Order Traversal: Root --> Left --> Right (8,7,12)
+	3. Post Order Traversal: Left -> RIght --> Root (7,12,8)
+	
+
+
+
+
+	
+		
