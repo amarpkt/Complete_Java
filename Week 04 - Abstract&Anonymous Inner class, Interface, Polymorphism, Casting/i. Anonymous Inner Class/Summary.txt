@@ -9,12 +9,9 @@ and when required we can create the object of B with reference of A
 - we can see the output : "In B Show"
 
 
-Problem: now the only problem is that  there will be many a time when we will come across this situation when we need to create a child
-         class just to implement a single method
-         - As we can see the class B, the only function of class B is to inherit the class A and allow code to override the 
-            parent class A method show() so that we can get a changed behavior of same method.
-        - result: we don't have to do much changes in main method, as the obj.show() is still same. only thing that changed to 
-            get this result is this:
+Problem: now the only problem is that  there will be many a time when we will come across this situation when we need to create a child class just to implement a single method
+    - As we can see the class B, the only function of class B is to inherit the class A and allow code to override the parent class A method show() so that we can get a changed behavior of same method.
+    - result: we don't have to do much changes in main method, as the obj.show() is still same. only thing that changed to get this result is this:
                 A obj = new A();  -------> A obj = new B();
 
 Solution : Anonymous Inner class
@@ -33,8 +30,8 @@ Solution : Anonymous Inner class
     Result: In New Show
 
 
-Verification: This can be verified by compilatio difference of Demo2.java and Demo3.java
+Verification: This can be verified by compilation difference of Demo2.java and Demo3.java
 - in Demo2.java, there will be a .class creation of Class B
-- while in Demo3.java, there is no A$1 .class formation for the Anonymous class created inside class A object creation.
+- while in Demo3.java, there is no .class formation for the Anonymous class created inside class A object creation.
 - this is becasue it is creted inside the A class and without name so called Anonymous Inner Class
  

@@ -13,8 +13,7 @@ Lambda Expression: Only applicable with the Functinal interface
 
 Why this syntax: Because we're working with Functinal interface so we have removed first the class which implements the interface A
 - now when we use Anonymous inner class then, we've seen how we don't need class B which implements interface A
-- now for FI, we know every time we do this lower syntax use, it's gonna remain same because ther is only one method, show() in 
-the interface A, so why to write this. JVM will do the job for us: 
+- now for Functional Interface, we know every time we do this lower syntax use, it's gonna remain same because ther is only one method, show() in the interface A, so why to write this. Let's JVM will do the job for us: 
 
 A obj = new A(){
             public void show(){

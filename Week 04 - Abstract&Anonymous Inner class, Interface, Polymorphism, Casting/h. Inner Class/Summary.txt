@@ -17,7 +17,7 @@ Demo.java:
 
 
 
-Also we know that we need to take support of the object only fot non-static classes.
+Also we know that we need to take support of the object only for non-static classes.
 so let's make the class B as static class:
 Demo2.java: 
 - See the difference in object creation: 

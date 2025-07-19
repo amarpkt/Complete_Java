@@ -14,7 +14,7 @@ Demo.java:
 - we can use the COMPARATOR here (an interface)
 
 Lets see how to use Comparator to sort these numbers accordingly: 
-- Comparator is an interface of which we will use the concept of Anonymous class to implement the logic.
+- Comparator is an interface of which, we will use the concept of Anonymous class to implement the logic.
 
 Demo2.java: 
 - for comparing the values we can use the same class Collection class and same method sort: 
@@ -27,6 +27,8 @@ Demo2.java:
     int compare(T o1, T o2);
 - so we need to pass two arguments, possibly the two elements of List which we want to sort with it's unit values.
 - so for swap we used modular operator to get the unit values and if the condition is true return 1 as true else -1 for false.
+
+
 
 
 
